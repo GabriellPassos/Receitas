@@ -88,7 +88,7 @@ function AdiconarTags() {
 }
 async function ConstruirElementoAutenticacao() {
     if (document.querySelector("#tela-autenticacao") == null) {
-        fetch("../shared/autenticacao/autenticacao.html").then(response => {
+        fetch("../autenticacao.html").then(response => {
             if (!response.ok) {
                 switch (response.status) {
                     default:

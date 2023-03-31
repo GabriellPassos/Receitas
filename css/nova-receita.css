@@ -1,6 +1,6 @@
 @font-face {
     font-family: patrickhandsc;
-    src: url("/shared/font/PatrickHandSC-Regular.ttf");
+    src: url("../font/PatrickHandSC-Regular.ttf");
 }
 
 input[type="checkbox"] {

@@ -17,7 +17,7 @@ input[type="radio"] {
 
 @font-face {
     font-family: lato;
-    src: url("/shared/font/Lato-Bold.ttf");
+    src: url("../font/Lato-Bold.ttf");
 }
 
 a:link,

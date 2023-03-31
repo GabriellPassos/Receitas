@@ -3,6 +3,7 @@
     position: relative;
     width: 90%;
     height: 100%;
+    margin-top: 40px;
 }
 
 .receita-exibicao {
@@ -15,7 +16,7 @@
     flex-direction: column;
     font-size: 18px;
     width: 100%;
-    margin-left: 2%;
+    margin-left: 4%;
 }
 .receita-info__moldura-info{
     display: grid;
@@ -24,10 +25,9 @@
     justify-content: space-between;
 }
 #receita-info__titulo {
-    font-size: 40px;
+    font-size: 45px;
     margin: 0;
-    text-align: center;
-    margin: 1% 0 2% 0;
+    margin: 1% 0 2% 1%;
 }
 
 #receita-info__ingredientes {

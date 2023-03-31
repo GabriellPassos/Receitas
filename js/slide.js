@@ -73,7 +73,7 @@ function ConstruirSlideHomeImagem(receitaDestaqueSlide) {
             elementoImagem.src = atob(imagemUrl);
             titulo.innerText = `${receita['name']}`;
             texto.innerText = `${receita['stepByStep']}`;
-            elementoMoldura.setAttribute('href', `/receita/receita.html?id=${receita["id"]}`)
+            elementoMoldura.setAttribute('href', `../receita.html?id=${receita["id"]}`)
             elementoInfo.append(titulo, texto);
             elementoMoldura.append(elementoImagem, elementoInfo);
             if (index == 0) {

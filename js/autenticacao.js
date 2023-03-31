@@ -150,7 +150,7 @@ async function EnviarFormularioLogin(elemento) {
 }
 
 async function BuscarCategoria(tagName) {
-    location.href = `../minhas-receitas/minhas-receitas.html?tag=${tagName}`
+    location.href = `../minhas-receitas.html?tag=${tagName}`
 }
 function Entrar() {
     ConstruirElementoAutenticacao();
@@ -249,6 +249,6 @@ async function Deslogar() {
                     }
                 });
             }
-        }).then(window.location.href = "../home/home.html")
+        }).then(window.location.href = "../index.html")
         .catch(err => console.log(err));
 }

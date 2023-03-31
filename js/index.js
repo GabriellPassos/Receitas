@@ -14,7 +14,7 @@ async function ConstruirElementoSlide() {
 async function ConstruirElementoVitrine() {
     var receitaDestaquePrincipal = await BuscarReceitasPorTag('destaqueprincipal');
     if (receitaDestaquePrincipal != null) {
-        destaqueVitrinePrincipal.querySelector('a').setAttribute('href', `/receita/receita.html?id=${receitaDestaquePrincipal[0]["id"]}`);
+        destaqueVitrinePrincipal.querySelector('a').setAttribute('href', `../receita.html?id=${receitaDestaquePrincipal[0]["id"]}`);
         destaqueVitrinePrincipal.querySelector(".exibicao-info_titulo").innerText = receitaDestaquePrincipal[0]["name"];
         destaqueVitrinePrincipal.querySelector(".porcoes").innerText = `${receitaDestaquePrincipal[0]["portions"]} porções`;
         destaqueVitrinePrincipal.querySelector(".tempo").innerText = receitaDestaquePrincipal[0]["time"];
@@ -29,7 +29,7 @@ async function ConstruirElementoVitrine() {
         for (let index = 0; index < destaqueVitrineDestaque.childElementCount; index++) {
             const element = destaqueVitrineDestaque.children[index];
             if (receitaDestaque[index] != null) {
-                element.setAttribute('href', `/receita/receita.html?id=${receitaDestaque[index]["id"]}`);
+                element.setAttribute('href', `../receita.html?id=${receitaDestaque[index]["id"]}`);
 
                 element.querySelector(".exibicao-destaque-info_titulo").innerText = receitaDestaque[index]["name"];
                 element.querySelector(".vitrine-receita-exbicao-destaque__usuario").innerText = `Chefe: ${receitaDestaque[index]["userName"]}`;
@@ -44,7 +44,7 @@ async function ConstruirElementoVitrine() {
         for (let index = 0; index < destaqueVitrineMaisDestaque.childElementCount; index++) {
             const element = destaqueVitrineMaisDestaque.children[index];
             if (receitaMaisDestaques[index] != null) {
-                element.setAttribute('href', `/receita/receita.html?id=${receitaMaisDestaques[index]["id"]}`);
+                element.setAttribute('href', `../receita.html?id=${receitaMaisDestaques[index]["id"]}`);
                 if (receitaMaisDestaques[index]["pictures"][0] != null) {
                     element.querySelector('img').src = atob(receitaMaisDestaques[index]["pictures"][0]);
                 }
