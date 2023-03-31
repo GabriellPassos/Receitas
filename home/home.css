@@ -19,7 +19,6 @@
     padding: 20px 0 20px 0;
     row-gap: 3ch;
     column-gap: 3ch;
-
 }
 #vitrine-receita__principal{
     display: flex;
@@ -28,9 +27,11 @@
     height: auto;
     width: auto;
     justify-content: center;
+    
 }
 .exibicao-info_titulo{
-    font-size: 20px;
+    font-size: 25px;
+    padding: 10px;
 }
 #vitrine-receita__destaque{
     display: flex;
@@ -90,6 +91,7 @@
     width: 100%;
     justify-content: center;
     row-gap: 1ch;
+    column-gap: 2ch;
     
 }
 .vitrine-receita__exibicao-mais-destaque{
@@ -156,6 +158,7 @@
     align-items: center;
     row-gap: .5ch;
     width: 90%; 
+    
 }
 .exibicao-info__moldura{
     display: flex;
@@ -236,8 +239,8 @@
 .noticia > img{
     transition: .05s;
     border: 2px solid transparent;
-    width: 100%;
-    height: 70%;
+    width: 97%;
+    height: 72%;
 }
 .noticia > h3{
     align-self: flex-start;

@@ -31,6 +31,27 @@ function IniciarVariaveis() {
 
     })
 }
+tagsNavigationBar.addEventListener("change", evento => {
+    evento.preventDefault();
+    // BuscarCategoria(evento.target.value);
+    ConstruirElementoSlide();
+});
+btnSair.addEventListener('click', evento => {
+    evento.preventDefault();
+    Deslogar();
+});
+
+campoNomeUsuario.addEventListener("click", evento => {
+    evento.preventDefault();
+    if (sessionStorage.getItem("nomeusuario") != null) {
+        //btnSair.style = "display:flex;";
+        btnSair.classList.toggle("header-fixed-top__sair-exibir")
+    }
+    else {
+        btnSair.style = "display:none;";
+        Entrar();
+    }
+});
 async function UpdateNomeUsuario() {
     if (sessionStorage.getItem("nomeusuario") != null) {
         campoNomeUsuario.innerText = sessionStorage.getItem("nomeusuario");
@@ -128,29 +149,8 @@ async function EnviarFormularioLogin(elemento) {
     }
 }
 
-tagsNavigationBar.addEventListener("change", evento => {
-    evento.preventDefault();
-    // BuscarCategoria(evento.target.value);
-    ConstruirElementoSlide();
-});
-btnSair.addEventListener('click', evento => {
-    evento.preventDefault();
-    Deslogar();
-});
-
-campoNomeUsuario.addEventListener("click", evento => {
-    evento.preventDefault();
-    if (sessionStorage.getItem("nomeusuario") != null) {
-        //btnSair.style = "display:flex;";
-        btnSair.classList.toggle("header-fixed-top__sair-exibir")
-    }
-    else {
-        btnSair.style = "display:none;";
-        Entrar();
-    }
-});
 async function BuscarCategoria(tagName) {
-    location.href = `http://127.0.0.1:5500/minhas-receitas/minhas-receitas.html?tag=${tagName}`
+    location.href = `../minhas-receitas/minhas-receitas.html?tag=${tagName}`
 }
 function Entrar() {
     ConstruirElementoAutenticacao();
@@ -229,3 +229,26 @@ function RegrasValidacao(elemento) {
     }
 }
 
+async function Deslogar() {
+    sessionStorage.removeItem("nomeusuario");
+    fetch("http://localhost:8000/Authentication/Logout",
+        {
+            mode: "cors",
+            method: "GET",
+            credentials: "include"
+        }).then(response => {
+
+            if (!response.ok) {
+                return response.text().then(text => {
+                    switch (response.status) {
+                        case 401:
+
+                            throw new Error(`${response.status}: acesso negado`)
+                        default:
+                            throw new Error(`${response.status}: ${text}`);
+                    }
+                });
+            }
+        }).then(window.location.href = "../home/home.html")
+        .catch(err => console.log(err));
+}

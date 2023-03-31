@@ -12,17 +12,14 @@ async function Start() {
         urlParametros = urlParametros.replace("?tag=", '');
         var tagName = urlParametros
         listaReceitas = await BuscarReceitasPorTag(tagName);
-        
     }
     else {
         listaReceitas = await BuscarReceitas();
-
     }
-    if(listaReceitas){
-        CarregarVitrine(listaReceitas);
+    if(sessionStorage.getItem("nomeusuario")){
         btnNovaReceita.style = "display:flex;"
     }
-    
+    CarregarVitrine(listaReceitas);
 }
 async function CarregarVitrine(receitas) {
     var listaTags = [];

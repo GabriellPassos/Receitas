@@ -88,7 +88,7 @@ function AdiconarTags() {
 }
 async function ConstruirElementoAutenticacao() {
     if (document.querySelector("#tela-autenticacao") == null) {
-        fetch("http://127.0.0.1:5500/shared/autenticacao/autenticacao.html").then(response => {
+        fetch("../shared/autenticacao/autenticacao.html").then(response => {
             if (!response.ok) {
                 switch (response.status) {
                     default:
@@ -103,29 +103,4 @@ async function ConstruirElementoAutenticacao() {
     else {
         document.querySelector("#tela-autenticacao").style = "display:flex;";
     }
-}
-async function Deslogar() {
-    sessionStorage.removeItem("nomeusuario");
-    fetch("http://localhost:8000/Authentication/Logout",
-        {
-            mode: "cors",
-            method: "GET",
-            credentials: "include"
-        }).then(response => {
-
-            if (!response.ok) {
-                return response.text().then(text => {
-                    switch (response.status) {
-                        case 401:
-
-                            throw new Error(`${response.status}: acesso negado`)
-                        default:
-                            throw new Error(`${response.status}: ${text}`);
-                    }
-                });
-            }
-        }).then(message => console.log(message))
-        .then(window.location.reload(false)
-            .catch(err => console.log(err))
-        );
 }
