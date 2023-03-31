@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+#tela-autenticacao {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% ,-50%);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+#tela-autenticacao__fundo{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% ,-50%);
+  background-color: rgba(230, 230, 230, 0.589);
+  height: 100%;
+  width: 100%;
+  z-index: -999;
+}
+#pop-up {
+  display: flex;
+  width: 380px;
+  height: 600px;
+  overflow: hidden;
+  background-color: white;
+  border-radius:9px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.747);
+  
+}
+
+#pop-up-login__moldura {
+  display: flex;
+  min-width: 200%;
+  height: 50%;
+  transition: .2s;
+}
+
+#pop-up  input {
+  margin-bottom: 10px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+#pop-up > input[type="radio"]{
+  display: none;
+}
+.envio__btn{
+  height: 50px;
+  margin: 10px 0 40px;
+}
+#login{
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  padding: 10px 20px 5px 20px;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+#login-form__btn {
+  height: 35px;
+}
+
+#registro{
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  padding: 10px 20px 5px 20px;
+}
+
+#registo-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+label {
+  margin-top: 10px;
+  width: 150px;
+}
+
+#login__btn-nova-conta:checked ~ #pop-up-login__moldura{
+  margin-left: -100%;
+}
+.aviso-validacao{
+  color: red;
+}

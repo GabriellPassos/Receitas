@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="login.css" rel="stylesheet" />
+  <title>Document</title>
+</head>
+
+<div id="tela-autenticacao">
+  <div id="pop-up-login">
+    <input type="radio" name="login-registro-btn" id="login__btn-nova-conta">
+    <input type="radio" name="login-registro-btn" id="login__btn-login">
+    <div id="pop-up-login__moldura">
+      <div id="login">
+        <form id="login-form">
+          <h2>Login</h2>
+          <label for="login-form__email">Email</label>
+          <input type="text" name="email" id="form-login__email">
+          <label for="login-form__senha">Senha</label>
+          <input type="password" name="password" id="form-login__senha">  
+          <button type="submit" class="envio__btn">Login</button>
+        </form>
+        <input id="login__checkbox-salvar" type="checkbox">
+        <span id="esqueci">Esqueci a senha</span>
+        <label for="login__btn-nova-conta">Crie uma nova conta.</label>
+        <label class="aviso-validacao"></label>
+      </div>
+      <div id="registro">
+        <h2>Registro</h2>
+        <form id="registo-form">
+          <label for="registro-form__nome">Nome</label>
+          <input type="text" name="name" id="registro-form__nome" placeholder="Insira seu Nome">
+          <label for="registro-form__email">Email</label>
+          <input type="text" name="email" id="registro-form__email" placeholder="Insira seu email">
+          <input type="text"  name="emailtwo" placeholder="Insira seu email">
+          <label for="registro-form__senha">Senha</label>
+          <input type="password" name="password"id="registro-form__senha" placeholder="Insira sua senha">
+          <input type="password" name="passwordtwo"placeholder="Insira sua senha">
+          <label for="registro-form__data">Data de Nascimento</label>
+          <input id="registro-form__data" name="birtdaydate" type="date">
+          <button type="submit" class="envio__btn">Registrar</button>
+        </form>
+        <label for="login__btn-login">Entrar</label>
+        <label class="aviso-validacao"></label>
+      </div>
+    </div>
+  </div>
+  <script src="login.js"></script>
+</div>
+
+</html>

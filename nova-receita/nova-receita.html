@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/shared/styles/style.css" rel="stylesheet" />
+    <link href="nova-receita.css" rel="stylesheet" />
+    <link href="/shared/autenticacao/autenticacao.css" rel="stylesheet" />
+    <title>ReceitasAPI</title>
+</head>
+
+<body>
+    <header>
+        <nav id="header-fixed-top">
+            <div class="header-fixed-top__logo">
+                <img src="/shared/images/logo1.png">
+                <a href="/home/home.html" title="ReceitasAPI">Receitas</a>
+            </div>
+            <a class="header-fixed-top__tag" href="http://127.0.0.1:5500/vitrine/vitrine.html?tag=">Todas as
+                Receitas</a>
+            <a class="header-fixed-top__tag" href="http://127.0.0.1:5500/vitrine/vitrine.html?tag=massa">Massas</a>
+            <a class="header-fixed-top__tag" href="http://127.0.0.1:5500/vitrine/vitrine.html?tag=carne">Carnes</a>
+
+            <a class="header-fixed-top__tag" href="http://127.0.0.1:5500/vitrine/vitrine.html?tag=frutosdomar">Frutos do
+                Mar</a>
+
+            <a class="header-fixed-top__tag" href="http://127.0.0.1:5500/vitrine/vitrine.html?tag=salada">Saladas</a>
+            <a class="header-fixed-top__tag" href="http://127.0.0.1:5500/vitrine/vitrine.html?tag=suco">Sucos</a>
+            <a class="header-fixed-top__tag" href="http://127.0.0.1:5500/vitrine/vitrine.html?tag=ave">Aves</a>
+            <a class="header-fixed-top__tag" href="http://127.0.0.1:5500/vitrine/vitrine.html?tag=doce">Doces</a>
+            <div class="header-fixed-top__btn">
+                <div class="header-fixed-top-vitrine">
+                    <a class="header-fixed-top-receitas__btn" href="/vitrine/vitrine.html">
+                        <div class="header-fixed-top-receitas__moldura">
+                            <div class="header-fixed-top-receitas__info img1">
+                                <img src="/shared/images/icon-recipe-book1.png">
+                            </div>
+                            <div class="header-fixed-top-receitas__info">
+                                <img src="/shared/images/icon-recipe-book2.png">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div id="header-fixed-top__usuario">
+                    <img src="/shared/images/imagem-do-usuario-com-fundo-preto.png">
+                    <span id="header-fixed-top__nome-usuario"></span>
+                    <span id="header-fixed-top__sair" class="header-fixed-top__sair">Sair</span>
+                </div>
+            </div>
+            <div id="header-fixed-top__btn-menu" >
+                <div class="btn-menu__toggle">
+                    <div class="btn-menu__barra-um"></div>
+                    <div class="btn-menu__barra-dois"></div>
+                    <div class="btn-menu__barra-tres"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="conteudo">
+        <form id="formulario-receita">
+            <ul id="formulario-primario">
+                <div id="formulario-foto">
+                    <div class="formulario-foto__moldura" id="formulario-foto__moldura">
+                        <img class="formulario-foto__clip" src="images/clipedepapel.png" height="50px" width="50px">
+                        <label for="" class="formulario-foto__background">
+                            <input type="file" accept="image/*" id="formulario-foto__adicionar"
+                                class="formulario-foto__adicionar">
+                            <img class="formulario-foto__imagem">
+                            <span class="formulario-foto__texto">+</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="formulario__nome-receita">
+                    <input name="name" type="text" class="formulario-info__texto" id="linha__nome" maxlength="40">
+                    <span class="linha__alerta-mensagem"></span>
+                </div>
+                <div class="formulario__info">
+                    <input type="text" name="ingredient" class="formulario-info__texto linha__ingrediente">
+                    <input type="number" name="quantity" class="formulario-info__texto linha__quantidade">
+                    <select name="unidade" class="formulario-info__texto linha__unidade">
+                        <option value="unidade">unidade</option>
+                        <option value="ml">ml</option>
+                        <option value="grama(s)">grama(s)</option>
+                        <option value="colher(es)">colher(es)</option>
+                        <option value="copo(s)">copo(s)</option>
+                    </select>
+                    <span class="linha__alerta-mensagem"></span>     
+                </div>
+                <div id="formulario__btn-nova-linha"> 
+                    <input type="image"  src="/shared/images/mais.png" height="40px"
+                    width="40px">
+                    <span>Nova linha</span>
+                </div>
+                <div class="formulario__info-instrucoes">
+                    <span>Modo de Preparo</span>
+                    <textarea type="text" name="stepByStep" class="formulario-info__texto" id="linha__instucoes"></textarea>
+                    <span class="linha__alerta-mensagem"></span>
+                </div>
+                <div id="formulario__tags">
+                    <div class="formulario__tag-primaria">
+                        <input type="checkbox" name="frutosdomar" id="tagP1">
+                        <label for="tagP1">Fruto do Mar</label>
+                        <input type="checkbox" name="massa" id="tagP2">
+                        <label for="tagP2">Massa</label>
+                        <input type="checkbox" name="carne" id="tagP3">
+                        <label for="tagP3">Carne</label>
+                        <input type="checkbox" name="salada" id="tagP4">
+                        <label for="tagP4">Salada</label>
+                        <input type="checkbox" name="ave" id="tagP5">
+                        <label for="tagP5">Ave</label>
+                        <input type="checkbox" name="guloseima" id="tagP6">
+                        <label for="tagP6">Doce</label>
+                        <input type="checkbox" name="suco" id="tagP7">
+                        <label for="tagP7">Suco</label>
+                    </div>
+                    <div class="formulario__tag-secundario">
+                        <input type="checkbox" name="fritura" id="tagS1">
+                        <label for="tagS1">Fritura</label>
+                        <input type="checkbox" name="petisco" id="tagS2">
+                        <label for="tagS2">Petisco</label>
+                        <input type="checkbox" name="almoco" id="tagS3">
+                        <label for="tagS3">Almoco</label>
+                        <input type="checkbox" name="cozido" id="tagS4">
+                        <label for="tagS4">Cozido</label>
+                        <input type="checkbox" name="legumes" id="tagS5">
+                        <label for="tagS5">Legumes</label>
+                        <input type="checkbox" name="rapido" id="tagS6">
+                        <label for="tagS6">Rapido</label>
+                        <input type="checkbox" name="massa" id="tagS7">
+                        <label for="tagS7">Massa</label>
+                        <input type="checkbox" name="ave" id="tagS8">
+                        <label for="tagS8">Ave</label>
+                        <input type="checkbox" name="light" id="tagS9">
+                        <label for="tagS9">Light</label>
+                        <input type="checkbox" name="vegano" id="tagS10">
+                        <label for="tagS10">Vegano</label>
+                        <input type="checkbox" name="bolo" id="tagS11">
+                        <label for="tagS11">Bolo</label>
+                    </div>
+                </div>
+                <div class="formulario__ultima-linha">
+                    <input type="image" value="submit" id="formulario__btn-envio" src="images/btnheartsend.png"
+                        height="50px" width="50px"></input>
+                </div>
+            </ul>
+            <ul id="formulario-secundario">
+                <div class="formulario-secundario__info">
+                    <img src="/shared/images/cronometro.png" height="50px" width="50px">
+                    <input type="time" class="formulario-info__texto linha__temporizador">
+                    <span class="linha__alerta-mensagem"></span>
+                </div>
+                <div class="formulario-secundario__info">
+                    <img src="/shared/images/pizza.png" height="50px" width="50px">
+                    <input type="number" class="formulario-info__texto linha__porcoes">
+                    <span class="linha__alerta-mensagem"></span>
+                </div>
+            </ul>
+        </form>
+    </div>
+    <footer>
+
+    </footer>
+    <script src="/shared/scripts/requsicao.js"></script>
+    <script src="/shared/autenticacao/autenticacao.js"></script>
+    <script src="nova-receita.js"></script>
+    <script src="/shared/scripts/responsividade.js"></script>
+    
+</body>
+
+</html>
