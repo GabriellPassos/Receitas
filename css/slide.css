@@ -81,3 +81,21 @@
     font-size: 18px;
     opacity: 75%;
 }
+@media (max-width: 375px) {
+    .triangulo-esquerda{
+        width: 0; 
+        height: 0; 
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent; 
+        border-right:20px solid black;
+        opacity: 50%;
+    }
+    .triangulo-direita{
+        width: 0; 
+        height: 0; 
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid black;
+        opacity: 50%;
+    }
+}

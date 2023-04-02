@@ -18,25 +18,29 @@
 }
 #receita__vertical-tagbar {
     display: flex;
+    position: relative;
+    justify-content: center;
     height: auto;
     min-height: 500px;
-    width: 300px;
+    width: 280px;
     background-color: white;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.747);
-    margin-left: 5%;
     margin-bottom: auto;
     border-radius: 5px;
+    margin-left: 5%;
+    margin-right: 3%;
+    overflow: hidden;
 }
 .receita__vertical-tagbar__campo-tag{
     display: flex;
     flex-direction: column;
-    width: 100%;
     align-items: center;
-    z-index: 999;
+    width: 100%;
 }
-.receita__vertical-tagbar__campo-tag>h2 {
+.receita__vertical-tagbar__campo-tag>span {
     padding-top: 10px;
-   
+    font-size: 2.5ch;
+    height: 50px;
 }
 #receita__vertical-tagbar__tags {
     display: flex;
@@ -45,8 +49,8 @@
     flex-wrap: wrap;
     list-style: none;
     padding: 0px;
+    width: 100%;
     justify-content: center;
-
 }
 
 .tag-vertical__btn-label{
@@ -83,14 +87,22 @@
 .receita-vertical-tagbar__btn>img {
     margin-left: 50px;
 }
+.receita-vertical-tagbar__btn-triangulo{
+    display: none;
+    min-height: 100%;
+    align-items: center;
+    width: 25px;
+    justify-content: right;
+    background-color: rgb(212, 212, 212);
+    
+
+}
 .receita-vertical-tagbar__triangulo{
-    width: 0; 
-    height: 0; 
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent; 
     border-right:15px solid black;
     opacity: 50%;
-    display: none;
+    margin-right: 1px;
 }
 #receita__exibicao {
     display: flex;
@@ -172,31 +184,23 @@
     #receita__exibicao{
         width: 100%;
     }
-    .receita-vertical-tagbar__triangulo{
-        display: flex;
-    }
     #receita__vertical-tagbar{
         position: absolute;
-        left: -5%;
+        left: 0;
+        margin: 0;
         top:16%;
         width: auto;
-        height: 100%;
+        height: auto;
         z-index: 700;
-        align-items: center;
+        justify-content: space-between;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
-        background-color: #8f8f8fd0;
     }
-
-    #receita__vertical-tagbar *:not(.receita-vertical-tagbar__triangulo){
+    .receita-vertical-tagbar__btn-triangulo{
+        display: flex;
+    }
+    #receita__vertical-tagbar *:not(.receita-vertical-tagbar__btn-triangulo, .receita-vertical-tagbar__btn-triangulo *){
       display: none;
-    }
-    .receita__vertical-tagbar__campo-tag{
-        background-color: white;
-
-    }
-    #receita__vertical-tagbar.on {
-       height: auto;
     }
     #receita__vertical-tagbar.on * {
         display: flex;
@@ -223,5 +227,9 @@
     .receita-exibicao__moldura{
         height: 25%;
         width:100%;
+    }
+    #receita__exibicao {
+        justify-content: center;
+
     }
 }

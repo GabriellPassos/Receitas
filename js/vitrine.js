@@ -1,7 +1,18 @@
 const vitrine = document.getElementById("receita__exibicao");
 const campoTags = document.getElementById("receita__vertical-tagbar__tags");
 const btnNovaReceita = document.getElementById("receita-exibicao-adicionar__moldura");
+const vitrineVerticalTagbar = document.querySelector('#receita__vertical-tagbar');
+
 campoTags.addEventListener("change", FiltrarPorTag);
+
+vitrineVerticalTagbar.addEventListener('click', evento => {
+
+    if (evento.target.classList.contains('receita-vertical-tagbar__btn-triangulo')) {
+        vitrineVerticalTagbar.classList.toggle("on");
+        console.log(evento.target);
+    }
+});
+
 Start();
 async function Start() {
     UpdateNomeUsuario();
@@ -16,7 +27,7 @@ async function Start() {
     else {
         listaReceitas = await BuscarReceitas();
     }
-    if(sessionStorage.getItem("nomeusuario")){
+    if (sessionStorage.getItem("nomeusuario")) {
         btnNovaReceita.style = "display:flex;"
     }
     CarregarVitrine(listaReceitas);
@@ -29,19 +40,18 @@ async function CarregarVitrine(receitas) {
                 const receita = receitas[index];
                 for (let index = 0; index < receita["tags"].length; index++) {
                     const tag = receita["tags"][index];
-                    if (!listaTags.includes(tag) && !tag.includes('destaque') && !tag.includes('maisreceitas'))
-                     {
+                    if (!listaTags.includes(tag) && !tag.includes('destaque') && !tag.includes('maisreceitas')) {
                         listaTags.push(tag);
                         ConstruirElementoTag(tag);
                     }
                 }
                 var elementoMoldura = ConstruirMoldura(receita);
                 elementoMoldura.querySelector("a").innerText = receita["name"];
-                if(receita['pictures'][0] != null){
+                if (receita['pictures'][0] != null) {
 
                     elementoMoldura.querySelector("img").src = atob(receita["pictures"][0]);
                 }
-                else{
+                else {
                     elementoMoldura.querySelector("img").src = '../images/logo.PNG'
                 }
                 vitrine.appendChild(elementoMoldura);
