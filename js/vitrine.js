@@ -118,7 +118,7 @@ function ConstruirElementoTag(tagName) {
 function ConstruirMoldura(receita) {
     var moldura = document.createElement("a");
     moldura.classList.add("receita-exibicao__moldura");
-    moldura.setAttribute("href", `/receita/receita.html?id=${receita["id"]}`);
+    moldura.setAttribute("href", `../receita.html?id=${receita["id"]}`);
     var imagem = document.createElement("img");
     imagem.classList.add("receita-exibicao__imagem");
     var barraNome = document.createElement("div");
@@ -136,7 +136,7 @@ function ConstruirMoldura(receita) {
 function ConstrutorBotaoNovaReceita() {
     var botao = document.createElement('a');
     botao.setAttribute("id", "receita-exibicao-adicionar__moldura");
-    botao.href = "/nova-receita/nova-receita.html";
+    botao.href = "../nova-receita.html";
     var texto = document.createElement('span');
     texto.innerText = "+";
     botao.appendChild(texto);

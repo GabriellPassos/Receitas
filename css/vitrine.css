@@ -41,6 +41,9 @@
     padding-top: 10px;
     font-size: 2.5ch;
     height: 50px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
 }
 #receita__vertical-tagbar__tags {
     display: flex;
@@ -93,9 +96,7 @@
     align-items: center;
     width: 25px;
     justify-content: right;
-    background-color: rgb(212, 212, 212);
-    
-
+    background-image: linear-gradient(to right, rgba(255,0,0,0),rgb(209, 209, 209));
 }
 .receita-vertical-tagbar__triangulo{
     border-top: 15px solid transparent;
@@ -184,6 +185,7 @@
     #receita__exibicao{
         width: 100%;
     }
+    
     #receita__vertical-tagbar{
         position: absolute;
         left: 0;
@@ -193,8 +195,8 @@
         height: auto;
         z-index: 700;
         justify-content: space-between;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
     }
     .receita-vertical-tagbar__btn-triangulo{
         display: flex;
@@ -216,7 +218,6 @@
     }
     #receita-exibicao-adicionar__moldura > span{
         font-size: 10ch;
-
     }
 }
 @media (max-width:405px){

@@ -4,8 +4,6 @@
     margin: 0;
     padding: 0;
 }
-
-
 input[type="radio"] {
     display: none;
 }
@@ -72,7 +70,7 @@ header {
 
 .header-fixed-top__logo>img {
     position: absolute;
-    margin-bottom: 30%;
+    margin-bottom: 30px;
     width: 60px;
     height: 60px;
 }
@@ -132,9 +130,7 @@ header {
     cursor: pointer;
     left: 11%;
     margin-right: 10px;
-
 }
-
 .header-fixed-top-receitas__moldura {
     display: flex;
     width: 200%;
@@ -276,21 +272,28 @@ footer {
         margin-bottom: 10%;
         height: 70px;
     }
-    #header-fixed-top__nome-usuario{
-        margin-bottom: 50px;
-        height: 20px;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-    }
-    .header-fixed-top__sair-exibir {
+    .header-fixed-top__btn{
         position: absolute;
+        height: 70px;
+        right: -11px;
+        bottom: 0;
+        align-items: normal;
+        scale: .8;
+    }
+    #header-fixed-top__nome-usuario{
         display: flex;
-        margin-top: 60px;
-        height: 20px;
         align-items: center;
-        justify-content: center;
-        display: flex;
+        height: 20px;
+    }
+    .header-fixed-top__sair {
+        margin-top: 52px;
+        height: 19px;
+        align-items: center;
+        position: absolute;
+    }
+    #header-fixed-top > a, 
+    .header-fixed-top__btn{
+        display: none;
     }
     #header-fixed-top__btn-menu{
         position: absolute;
@@ -322,10 +325,7 @@ footer {
     #header-fixed-top.on  .btn-menu__toggle .btn-menu__barra-tres {
         transform: rotate(-45deg) translate(5px, -10px);
     }
-    #header-fixed-top > a, 
-    .header-fixed-top__btn{
-        display: none;
-    }
+
     #header-fixed-top.on {
         display: flex;
         flex-direction: column;
@@ -354,18 +354,10 @@ footer {
     #header-fixed-top.on .header-fixed-top__logo > a{
         font-size: 2.5rem;
     }
-    #header-fixed-top > a:hover {
-        border-bottom: 5px solid black;
-    }
     #header-fixed-top > a {
         font-size: 2rem;
     }
-    .header-fixed-top__btn {
-        position: absolute;
-        height: auto;
-        right: 0;
-        bottom: 0;
-    }
+
 
 }
 @media (max-width:375px) {
