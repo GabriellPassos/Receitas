@@ -70,7 +70,7 @@ header {
 
 .header-fixed-top__logo>img {
     position: absolute;
-    top: -5px;
+    top: -3px;
     width: 60px;
     height: 60px;
 }
@@ -81,7 +81,7 @@ header {
     font-family: celebrity;
     font-size: 35px;
     color: rgb(0, 0, 0); 
-    margin-top: 20%;
+    margin-top: 20px;
 }
 
 .header-fixed-top__tag {
@@ -272,8 +272,9 @@ footer {
         margin-bottom: 10%;
         height: 70px;
     }
+
     .header-fixed-top__btn{
-        position: absolute;
+        position: fixed;
         height: 70px;
         right: -8px;
         bottom: 0;
@@ -296,7 +297,7 @@ footer {
         display: none;
     }
     #header-fixed-top__btn-menu{
-        position: absolute;
+        position: fixed;
         right: 5px;
         top: 19px;
     }
@@ -314,46 +315,44 @@ footer {
         margin: 6px auto;
         transition: .3s;
     }
-    #header-fixed-top.on {
+    header.on #header-fixed-top {
         display: flex;
         flex-direction: column;
         z-index: 999;
         padding: 25px 0px 10px 0px;
-        justify-content: center;
-        height: 100vh;
+        justify-content: normal;
+        height: 100%;
         padding-bottom: auto;
         line-height: 4rem;
         overflow:scroll;
-        
     }
-    #header-fixed-top.on  .btn-menu__toggle .btn-menu__barra-um {
+    header.on {
+        height: 100vh;
+    }
+    header.on  .btn-menu__toggle .btn-menu__barra-um {
         transform: rotate(45deg) translate(5px, 10px);
     }
 
-    #header-fixed-top.on  .btn-menu__toggle .btn-menu__barra-dois {
+    header.on  .btn-menu__toggle .btn-menu__barra-dois {
         opacity: 0;
     }
-    #header-fixed-top.on  .btn-menu__toggle .btn-menu__barra-tres {
+    header.on  .btn-menu__toggle .btn-menu__barra-tres {
         transform: rotate(-45deg) translate(5px, -10px);
     }
-
-    header{
-        height: auto;
-    }
-    #header-fixed-top.on .header-fixed-top__btn{
+    header.on .header-fixed-top__btn{
         display: flex;
     }
-    #header-fixed-top.on a{
+    header.on #header-fixed-top>a{
         display: block;
     }
-    #header-fixed-top.on .header-fixed-top__logo{
+    header.on .header-fixed-top__logo{
         opacity: 70%;
     }
-    #header-fixed-top.on .header-fixed-top__logo > img{
+    header.on .header-fixed-top__logo > img{
         height: 65px;
         width: 65px;
     }
-    #header-fixed-top.on .header-fixed-top__logo > a{
+    header.on .header-fixed-top__logo > a{
         font-size: 2.5rem;
     }
     #header-fixed-top > a {
@@ -363,7 +362,7 @@ footer {
 
 }
 @media (max-width:375px) {
-    #header-fixed-top.on{
+    header.on #header-fixed-top{
         line-height: 3rem;
     }   
     #header-fixed-top .header-fixed-top__tag{

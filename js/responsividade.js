@@ -1,5 +1,5 @@
 const menuHamburguer = document.getElementById("header-fixed-top__btn-menu");
-const headFixedbar = document.getElementById("header-fixed-top");
+const headFixedbar = document.querySelector("header");
 var menuOpen = false;
 menuHamburguer.addEventListener('click', evento =>{
     menuOpen = !menuOpen;
