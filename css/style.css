@@ -70,7 +70,7 @@ header {
 
 .header-fixed-top__logo>img {
     position: absolute;
-    top: -3px;
+    top: -5px;
     width: 60px;
     height: 60px;
 }
@@ -81,7 +81,7 @@ header {
     font-family: celebrity;
     font-size: 35px;
     color: rgb(0, 0, 0); 
-    margin-top: 20px;
+    top: 11px;
 }
 
 .header-fixed-top__tag {
@@ -276,7 +276,7 @@ footer {
     .header-fixed-top__btn{
         position: fixed;
         height: 70px;
-        right: -8px;
+        right: 0;
         bottom: 0;
         align-items: normal;
         scale: .8;
