@@ -87,9 +87,8 @@ function AdiconarTags() {
     });
 }
 async function ConstruirElementoAutenticacao() {
-
-    if (document.querySelector("#tela-autenticacao") == null) {
-        fetch("../autenticacao.html").then(response => {
+   if (document.querySelector("#tela-autenticacao") == null) {
+        fetch("https://gabriellpassos.github.io/WebSiteReceitasAPI/autenticacao.html").then(response => {
             if (!response.ok) {
                 switch (response.status) {
                     default:

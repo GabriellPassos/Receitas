@@ -275,7 +275,7 @@ footer {
     .header-fixed-top__btn{
         position: absolute;
         height: 70px;
-        right: -11px;
+        right: -8px;
         bottom: 0;
         align-items: normal;
         scale: .8;
@@ -299,7 +299,6 @@ footer {
         position: absolute;
         right: 5px;
         top: 19px;
-       
     }
     .btn-menu__toggle {
         width: 40px;
@@ -315,17 +314,6 @@ footer {
         margin: 6px auto;
         transition: .3s;
     }
-    #header-fixed-top.on  .btn-menu__toggle .btn-menu__barra-um {
-        transform: rotate(45deg) translate(5px, 10px);
-    }
-
-    #header-fixed-top.on  .btn-menu__toggle .btn-menu__barra-dois {
-        opacity: 0;
-    }
-    #header-fixed-top.on  .btn-menu__toggle .btn-menu__barra-tres {
-        transform: rotate(-45deg) translate(5px, -10px);
-    }
-
     #header-fixed-top.on {
         display: flex;
         flex-direction: column;
@@ -337,6 +325,20 @@ footer {
         line-height: 4rem;
         overflow:scroll;
         
+    }
+    #header-fixed-top.on  .btn-menu__toggle .btn-menu__barra-um {
+        transform: rotate(45deg) translate(5px, 10px);
+    }
+
+    #header-fixed-top.on  .btn-menu__toggle .btn-menu__barra-dois {
+        opacity: 0;
+    }
+    #header-fixed-top.on  .btn-menu__toggle .btn-menu__barra-tres {
+        transform: rotate(-45deg) translate(5px, -10px);
+    }
+
+    header{
+        height: auto;
     }
     #header-fixed-top.on .header-fixed-top__btn{
         display: flex;
