@@ -40,8 +40,7 @@ header {
     top: 0px;
     left: 0px;
     width: 100vw;
-    min-height: 90px;
-    height: auto;
+    height: 75px;
     background-color: #a9661cde;
     justify-content: center;
     align-items: center;
@@ -54,6 +53,7 @@ header {
     align-items: center;
     justify-content: space-between;
     transition: .04s;
+    margin-bottom: 7px;
 }
 .header-fixed-top__btn {
     display: flex;
@@ -70,7 +70,7 @@ header {
 
 .header-fixed-top__logo>img {
     position: absolute;
-    margin-bottom: 30px;
+    top: -5px;
     width: 60px;
     height: 60px;
 }
@@ -298,7 +298,7 @@ footer {
     #header-fixed-top__btn-menu{
         position: absolute;
         right: 5px;
-        top: 25px;
+        top: 19px;
        
     }
     .btn-menu__toggle {

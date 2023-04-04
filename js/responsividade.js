@@ -6,5 +6,3 @@ menuHamburguer.addEventListener('click', evento =>{
     headFixedbar.classList.toggle("on", menuOpen);
     document.body.style.overflow = menuOpen ? 'hidden' : 'initial';
 });
-
-

@@ -87,6 +87,7 @@ function AdiconarTags() {
     });
 }
 async function ConstruirElementoAutenticacao() {
+
     if (document.querySelector("#tela-autenticacao") == null) {
         fetch("../autenticacao.html").then(response => {
             if (!response.ok) {

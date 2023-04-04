@@ -224,13 +224,14 @@
 .noticia{
     display: flex;
     flex-direction: column;
-    height: 290px;
-    width: 90%;
+    height: 300px;
+    width: 300px;
     border-bottom: 5px solid black;
     border-top: 3px solid black;    
     padding: 3px 0 5px 0;
     align-items: center;
     overflow: hidden;
+    margin: 10px;
 }
 .slide__info{
     z-index: 0;
@@ -244,19 +245,14 @@
 .noticia > img{
     transition: .05s;
     border: 2px solid transparent;
-    width: 97%;
-    height: 72%;
+    width: 90%;
+    height: 83%;
 }
 .noticia > h3{
     align-self: flex-start;
     height: 20px;   
     margin-top: 5px;
     margin-bottom: 0;
-
-}
-.noticia > p{
-    height: auto;
-    margin: 0;
 }
 @media (max-width: 1024px) {
     .slides{
