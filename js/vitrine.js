@@ -1,16 +1,13 @@
 const vitrine = document.getElementById("receita__exibicao");
 const campoTags = document.getElementById("receita__vertical-tagbar__tags");
 const btnNovaReceita = document.getElementById("receita-exibicao-adicionar__moldura");
-const vitrineVerticalTagbar = document.querySelector('#receita__vertical-tagbar');
-
+const vitrineVerticalTagbar = document.getElementById('receita__vertical-tagbar');
+const btnTagFiltro = document.querySelector(".receita-vertical-tagbar__btn-triangulo");
 campoTags.addEventListener("change", FiltrarPorTag);
 
-vitrineVerticalTagbar.addEventListener('click', evento => {
-
-    if (evento.target.classList.contains('receita-vertical-tagbar__btn-triangulo')) {
-        vitrineVerticalTagbar.classList.toggle("on");
-        console.log(evento.target);
-    }
+btnTagFiltro.addEventListener('click', evento => {
+    console.log(evento.target)
+    vitrineVerticalTagbar.classList.toggle("on");
 });
 
 Start();

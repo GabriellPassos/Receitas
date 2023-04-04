@@ -74,14 +74,17 @@ header {
     width: 60px;
     height: 60px;
 }
-
-.header-fixed-top__logo>a {
+.header-fixed-top-logo__titulo{
     position: relative;
     display: flex;
+    margin-top: 20px;
+}
+.header-fixed-top-logo__titulo > a{
+
     font-family: celebrity;
     font-size: 35px;
     color: rgb(0, 0, 0); 
-    top: 11px;
+
 }
 
 .header-fixed-top__tag {
