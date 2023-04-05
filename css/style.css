@@ -284,13 +284,14 @@ footer {
 @media (max-width: 768px) {
     .header-fixed-top-vitrine{
         margin:0;
+        align-items: center;
     }
     .header-fixed-top__btn{
         position: fixed;
         height: 70px;
         right: 0;
         bottom: 0;
-        align-items: normal;
+        align-items: center;
         scale: .8;
     }
     #header-fixed-top__nome-usuario{
