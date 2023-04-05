@@ -81,8 +81,8 @@ header {
     font-family: celebrity;
     font-size: 35px;
     color: rgb(0, 0, 0); 
-    top: 11px;
-    height: 50px;
+    padding-top: 15px;
+    height: 100%;
     align-items: center;
 }
 
