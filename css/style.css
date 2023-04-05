@@ -273,7 +273,7 @@ footer {
     background-color: #a9661cde;
 }
 .correcao-pivot{
-    transform: translate(0 ,40px);
+    transform: translate(0 ,20px);
 }
 
 @media (max-width: 1024px) {
@@ -341,9 +341,6 @@ footer {
     header.on {
         height: 100vh;
     }
-    header.on .correcao-pivot {
-        transform: translate(0 ,20px);
-     }
     header.on  .btn-menu__toggle .btn-menu__barra-um {
         transform: rotate(45deg) translate(5px, 10px);
     }
