@@ -82,10 +82,12 @@ header {
     border: 2px solid yellow;
     text-align: center;
     height: 50px;
-    width: auto;
+    width: 130px;
     margin-top: 20px;
+    justify-content: center;
 }
 .header-fixed-top-logo__titulo>a {
+    position: absolute;
     font-family: celebrity;
     font-size: 35px;
     color: rgb(0, 0, 0); 
@@ -280,7 +282,9 @@ footer {
         margin-bottom: 10%;
         height: 70px;
     }
-
+    .header-fixed-top-logo__titulo>a {
+        transform: translate(0 ,50%);
+    }
     .header-fixed-top__btn{
         position: fixed;
         height: 70px;
