@@ -3,7 +3,7 @@
     position: relative;
     width: 90%;
     height: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .receita-exibicao {
@@ -131,5 +131,23 @@
         min-width: 80vw;
         width: auto;
         margin-left: 0;
+    }
+}
+@media (max-width:600px) {
+
+    .slides{
+        width: 100vw;
+        height: 240px;
+    }
+    #receita__barra-info{
+        flex-wrap: wrap;
+        
+    }
+    .receita-info__moldura-info{
+        grid-template-columns: auto;
+        row-gap: 50px;
+    }
+    #receita-info__titulo{
+        margin-top: 20px;
     }
 }
