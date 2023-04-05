@@ -65,12 +65,14 @@ header {
     align-items: center;
     justify-content: center;
     position: relative;
-    height: 100%;
+    height: 70px;
+    border: 2px solid blue;
 }
 
 .header-fixed-top__logo>img {
     position: absolute;
-    top: -5px;
+    top: -10px;
+    border: 2px solid green;
     width: 60px;
     height: 60px;
 }
@@ -81,9 +83,9 @@ header {
     font-family: celebrity;
     font-size: 35px;
     color: rgb(0, 0, 0); 
-    padding-top: 15px;
-    height: 100%;
-    align-items: center;
+    height: auto;
+    border: 2px solid red;
+    margin-top: 20px;
 }
 
 .header-fixed-top__tag {
