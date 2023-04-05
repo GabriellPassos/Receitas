@@ -65,7 +65,7 @@ header {
     align-items: center;
     justify-content: center;
     position: relative;
-    height: 75px;
+    height: 100%;
 }
 
 .header-fixed-top__logo>img {
