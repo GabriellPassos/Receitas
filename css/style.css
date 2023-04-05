@@ -76,17 +76,20 @@ header {
     width: 60px;
     height: 60px;
 }
-
-.header-fixed-top__logo>a {
+.header-fixed-top-logo__titulo{
     position: relative;
     display: flex;
+    border: 2px solid yellow;
+    text-align: center;
+    height: 50px;
+    width: auto;
+    margin-top: 20px;
+}
+.header-fixed-top-logo__titulo>a {
     font-family: celebrity;
     font-size: 35px;
     color: rgb(0, 0, 0); 
-    height: auto;
     border: 2px solid red;
-    margin-top: 20px;
-    text-align: center;
 }
 
 .header-fixed-top__tag {
