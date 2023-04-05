@@ -86,6 +86,7 @@ header {
     height: auto;
     border: 2px solid red;
     margin-top: 20px;
+    text-align: center;
 }
 
 .header-fixed-top__tag {
