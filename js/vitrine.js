@@ -15,17 +15,20 @@ async function Start() {
     UpdateNomeUsuario();
     urlParametros = window.location.search;
     var listaReceitas;
-    btnNovaReceita.style = "display:none;"
+    btnNovaReceita.style = "display:none;";
     if (urlParametros.includes('tag')) {
         urlParametros = urlParametros.replace("?tag=", '');
         var tagName = urlParametros
         listaReceitas = await BuscarReceitasPorTag(tagName);
     }
-    else {
-        listaReceitas = await BuscarReceitas();
-    }
-    if (sessionStorage.getItem("nomeusuario")) {
-        btnNovaReceita.style = "display:flex;"
+    else{
+        if (sessionStorage.getItem("nomeusuario")) {
+            btnNovaReceita.style = "display:flex;";
+            listaReceitas = await BuscarReceitas();
+        }
+        else{
+            VerificacaoLogin();
+        }
     }
     CarregarVitrine(listaReceitas);
 }

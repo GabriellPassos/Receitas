@@ -199,7 +199,7 @@ function AddNovaLinha() {
     mensagemAlerta.classList.add("linha__alerta-mensagem");
     btnRemove.className = "linha__btn-remove";
     btnRemove.type = "image";
-    btnRemove.src = "/shared/images/negado.png";
+    btnRemove.src = "images/negado.png";
 
     btnRemove.addEventListener("click", evento => {
         formularioPrimario.removeChild(evento.target.parentElement);
