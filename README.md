@@ -8,7 +8,7 @@ Siga os passos para execução deste ambiente.
 3. Com seu interpretador de comandos vá até a pasta "docker compose" localizada dentro deste repositório baixado.
 4. Execute em ordem os seguintes comandos em seu interpretador:
 
-docker-compose build --no-cache
-docker-compose up
+- docker-compose build --no-cache
+- docker-compose up
 
-5° O container irá aparecer na lista no programa Docker Desktop e estará pronto para uso.
+5. O container irá aparecer na lista no programa Docker Desktop e estará pronto para uso.
