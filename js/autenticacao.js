@@ -33,7 +33,6 @@ function IniciarVariaveis() {
 }
 tagsNavigationBar.addEventListener("change", evento => {
     evento.preventDefault();
-    // BuscarCategoria(evento.target.value);
     ConstruirElementoSlide();
 });
 btnSair.addEventListener('click', evento => {
@@ -44,7 +43,6 @@ btnSair.addEventListener('click', evento => {
 campoNomeUsuario.addEventListener("click", evento => {
     evento.preventDefault();
     if (sessionStorage.getItem("nomeusuario") != null) {
-        //btnSair.style = "display:flex;";
         btnSair.classList.toggle("header-fixed-top__sair-exibir")
     }
     else {
@@ -62,35 +60,7 @@ async function UpdateNomeUsuario() {
     }
 }
 async function VerificacaoLogin() {
-    return fetch("http://localhost:8000/Authentication/UserCheck",
-        {
-            method: "GET",
-            mode: "cors",
-            credentials: "include"
-        }).then(response => {
-            if (!response.ok) {
-
-                return response.text().then(text => {
-                    switch (response.status) {
-                        case 401:
-                            ConstruirElementoAutenticacao();
-                            throw new Error(`${response.status}: acesso negado`);
-                        default:
-                            throw new Error(`${response.status}: ${text}`);
-                    }
-                });
-            }
-
-            return response.text();
-
-        }).then(userName => {
-            if (userName.includes('User:')) {
-                userName = userName.replace("User:", '');
-                sessionStorage.setItem("nomeusuario", userName);
-                window.location.reload(false)
-                return userName;
-            }
-        }).then().catch(err => console.log(err));
+    return await VerificarLogin();
 }
 
 async function EnviarFormularioRegistro(elemento) {
@@ -99,53 +69,14 @@ async function EnviarFormularioRegistro(elemento) {
         var RegistroData = {};
         formData.forEach((value, key) => (RegistroData[key] = value));
         var chave = btoa(JSON.stringify(RegistroData));
-       
-        fetch("http://localhost:8000/Authentication/Register",
-            {
-                method: "GET",
-                mode: "cors",
-                headers: {
-                    "Authorization": "Basic " + chave
-                },
-                credentials: "include"
-            }).then(response => {
-                if (!response.ok) {
-                    return response.text().then(text => {
-                        switch (response.status) {
-                            default:
-                                throw new Error(`${response.status}: ${text}`);
-                        }
-                    });
-                }
-                window.location.reload(false);
-            }).catch(err => console.log(err));
+        await Registrar(chave);
     }
 }
 async function EnviarFormularioLogin(elemento) {
     if (ValidacaoCampos(elemento)) {
         var chave = btoa(elemento.querySelector("#form-login__email").value +
             ":" + elemento.querySelector("#form-login__senha").value);
-
-        fetch("http://localhost:8000/Authentication/Login",
-            {
-                mode: "cors",
-                method: "GET",
-                headers: {
-                    "Authorization": "Basic " + chave,
-                },
-                credentials: "include"
-            }).then(response => {
-                if (!response.ok) {
-                    return response.text().then(text => {
-                        switch (response.status) {
-                            default:
-                                throw new Error(`${response.status}: ${text}`);
-                        }
-                    });
-                }
-
-            }).catch(err => console.log(err))
-            .then(VerificacaoLogin);
+        await Login(chave);
     }
 }
 
@@ -187,7 +118,6 @@ function ValidacaoCampos(formulario) {
             else {
                 elementoAlerta.style = "display:none";
                 elementoAlerta.innerText = "";
-
             }
         }
     }
@@ -231,24 +161,5 @@ function RegrasValidacao(elemento) {
 
 async function Deslogar() {
     sessionStorage.removeItem("nomeusuario");
-    fetch("http://localhost:8000/Authentication/Logout",
-        {
-            mode: "cors",
-            method: "GET",
-            credentials: "include"
-        }).then(response => {
-
-            if (!response.ok) {
-                return response.text().then(text => {
-                    switch (response.status) {
-                        case 401:
-
-                            throw new Error(`${response.status}: acesso negado`)
-                        default:
-                            throw new Error(`${response.status}: ${text}`);
-                    }
-                });
-            }
-        }).then(window.location.href = "../index.html")
-        .catch(err => console.log(err));
+    await Desconectar()
 }
