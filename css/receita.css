@@ -1,0 +1,153 @@
+.receita {
+    display: flex;
+    position: relative;
+    width: 90%;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.receita-exibicao {
+    position: relative;
+    margin-bottom: auto;
+}
+
+.receita__info {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    width: 100%;
+    margin-left: 4%;
+}
+.receita-info__moldura-info{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 2%;
+    justify-content: space-between;
+}
+#receita-info__titulo {
+    font-size: 45px;
+    margin: 0;
+    margin: 1% 0 2% 1%;
+}
+
+#receita-info__ingredientes {
+    line-height: 1.8;
+    align-items: start;
+}
+
+#receita-info__ingredientes>ul {
+    padding-left: 1em;
+}
+
+#receita-info__instrucoes {
+    align-items: start;
+    line-height: 1.8;
+}
+
+#receita__barra-info {
+    display: flex;
+    margin-top: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 100px;
+    width: 100%;
+    background-color: rgba(209, 198, 198, 0.589);
+    padding: 0 15px 0 15px;
+}
+
+.barra-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    width: 20%;
+}
+
+.barra-info__titulo {
+    color: rgb(184, 144, 34);
+    width: 100px;
+    text-align: center;
+    font-size: 13px;
+    margin: 3px;
+}
+
+.barra-info__usuario {
+    display: flex;
+    height: 100%;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.barra-info-usuario__texto {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: auto;
+
+}
+
+.barra-info__nome {
+    font-size: 20px;
+}
+
+.slides {
+    position: relative;
+    width: 550px;
+    height: 340px;
+    overflow: hidden;
+    z-index: 0;
+    border-radius: 2%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.747);
+}
+
+.triangulo-esquerda {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-right: 25px solid black;
+    opacity: 50%;
+
+}
+
+.triangulo-direita {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 25px solid black;
+    opacity: 50%;
+}
+@media (max-width:1024px) {
+    .receita{
+        flex-direction: column;
+        align-items: center;
+        width: 98%;
+    }
+    .receita__info {
+        min-width: 80vw;
+        width: auto;
+        margin-left: 0;
+    }
+}
+@media (max-width:600px) {
+
+    .slides{
+        width: 100vw;
+        height: 240px;
+    }
+    #receita__barra-info{
+        flex-wrap: wrap;
+        
+    }
+    .receita-info__moldura-info{
+        grid-template-columns: auto;
+        row-gap: 50px;
+    }
+    #receita-info__titulo{
+        margin-top: 20px;
+    }
+}

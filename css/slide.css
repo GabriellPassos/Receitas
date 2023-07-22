@@ -1,0 +1,101 @@
+.slides{
+    position: relative;
+    max-width: 1000px;
+    height: 460px;
+    overflow: hidden;
+    z-index: 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.747);
+}
+#slides-moldura{
+    display: flex;
+    position: relative;
+    width: 400%;
+    height: 150%;
+}
+.slide{
+    display: flex;
+    position: relative;
+    width: 25%;
+    margin-left: 0px;
+    transition: .5s;
+}
+.slide > img{
+    width: 120%;
+    height: 100%;
+}
+#navigation{
+    display: flex;
+    position: absolute;
+    width: 98%;
+    height: auto;
+    top:50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    justify-content: space-between;
+}
+.navigation__btn{
+    margin: 10px;
+    transition: .2s
+}
+.navigation__btn:hover{
+   opacity: 80%;
+}
+.triangulo-esquerda{
+    width: 0; 
+    height: 0; 
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent; 
+    border-right:35px solid black;
+    opacity: 50%;
+}
+.triangulo-direita{
+    width: 0; 
+    height: 0; 
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-left: 35px solid black;
+    opacity: 50%;
+}
+.slide__info{
+    position: absolute;
+    border: 5px solid black;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    background-color: rgba(255, 255, 255, 0.733);
+    height: 40%;
+    width:45%;
+    z-index: 999;
+    top: 29%;
+    left:30%;
+    transform: translate(-50% ,-50%);
+    padding:20px 10px 20px 30px ;
+    overflow: hidden;
+}
+.slide__info > h2{
+    margin: 0;
+    font-size: 40px;
+    opacity: 80%;
+}
+.slide__info > p{
+    margin-top: 1ch;
+    font-size: 18px;
+    opacity: 75%;
+}
+@media (max-width: 375px) {
+    .triangulo-esquerda{
+        width: 0; 
+        height: 0; 
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent; 
+        border-right:20px solid black;
+        opacity: 50%;
+    }
+    .triangulo-direita{
+        width: 0; 
+        height: 0; 
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid black;
+        opacity: 50%;
+    }
+}

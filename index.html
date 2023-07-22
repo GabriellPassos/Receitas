@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/slide.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/autenticacao.css" rel="stylesheet" />
+    <title>ReceitasAPI</title>
+</head>
+<header>
+    <nav id="header-fixed-top">
+        <div class="header-fixed-top__logo">
+            <img src="images/logo1.png">
+            <div class="header-fixed-top-logo__titulo">
+                <a id="titulo-logo" href="index.html" title="ReceitasAPI">Receitas</a>
+            </div>
+        </div>
+        <a class="header-fixed-top__tag" href="vitrine.html?tag=">Todas as
+            Receitas</a>
+        <a class="header-fixed-top__tag" href="vitrine.html?tag=massa">Massas</a>
+        <a class="header-fixed-top__tag" href="vitrine.html?tag=carne">Carnes</a>
+
+        <a class="header-fixed-top__tag" href="vitrine.html?tag=frutosdomar">Frutos do
+            Mar</a>
+
+        <a class="header-fixed-top__tag" href="vitrine.html?tag=salada">Saladas</a>
+        <a class="header-fixed-top__tag" href="vitrine.html?tag=suco">Sucos</a>
+        <a class="header-fixed-top__tag" href="vitrine.html?tag=ave">Aves</a>
+        <a class="header-fixed-top__tag" href="vitrine.html?tag=doce">Doces</a>
+        <div class="header-fixed-top__btn">
+            <div class="header-fixed-top-vitrine">
+                <a class="header-fixed-top-receitas__btn" href="vitrine.html">
+                    <div class="header-fixed-top-receitas__moldura">
+                        <div class="header-fixed-top-receitas__info img1">
+                            <img src="images/icon-recipe-book1.png">
+                        </div>
+                        <div class="header-fixed-top-receitas__info">
+                            <img src="images/icon-recipe-book2.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="header-fixed-top__usuario">
+                <img src="images/imagem-do-usuario-com-fundo-preto.png">
+                <span id="header-fixed-top__nome-usuario"></span>
+                <span id="header-fixed-top__sair" class="header-fixed-top__sair">Sair</span>
+            </div>
+        </div>
+        <div id="header-fixed-top__btn-menu" >
+            <div class="btn-menu__toggle">
+                <div class="btn-menu__barra-um"></div>
+                <div class="btn-menu__barra-dois"></div>
+                <div class="btn-menu__barra-tres"></div>
+            </div>
+        </div>
+    </nav>
+
+</header>
+    <div class="conteudo">
+        <div class="slides">
+            <div id="slides-moldura">
+            </div>
+            <div id="navigation">
+                <div class="navigation__btn triangulo-esquerda"></div>
+                <div class="navigation__btn triangulo-direita"></div>
+            </div>
+        </div>
+        <div class="conteudo__divisor">
+            <h2>DESTAQUE</h2>
+        </div>
+        <div class="vitrine-receita">
+            <div id="vitrine-receita__principal">
+                <a class="vitrine-receita__exbicao-principal">
+                    <div class="exbicao-principal__moldura">
+                        <img class="exbicao-principal__moldura-imagem" src="images/logo.PNG">
+                    </div>
+                    <h3 class="exibicao-info_titulo"></h3>
+                    <div class="exibicao__info">
+                        <div class="exibicao-info__moldura">
+                            <img src="images/pizza.png" height="44px" width="44px">
+                        </div>
+                        <div class="exibicao-info">
+                            <span>Redimento:</span>
+                            <span class="exibicao-info-texto porcoes">porcoes</span>
+                        </div>
+                        <div class="exibicao-info__moldura">
+                            <img src="images/cronometro.png" height="48px" width="48px">
+                        </div>
+                        <div class="exibicao-info">
+                            <span>Tempo de preparo:</span>
+                            <span class="exibicao-info-texto tempo">00:00h</span>
+                        </div>
+                        <div class="exibicao-info__moldura">
+                            <img src="images/hamster.png" height="55px" width="55px">
+                        </div>
+                        <div class="exibicao-info">
+                            <span></span>
+                            <span class="exibicao-info-texto usuario"></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="vitrine-receita__destaque">
+                <a class="vitrine-receita__exbicao-destaque">
+                    <div class="exbicao-destaque__moldura">
+                        <img src="images/logo.PNG">
+                    </div>
+                    <div class="exibicao-destaque__info">
+                        <h3 class="exibicao-destaque-info_titulo"></h3>
+                        <span class="vitrine-receita-exbicao-destaque__usuario"></span>
+                    </div>
+                </a>
+                <a class="vitrine-receita__exbicao-destaque">
+                    <div class="exbicao-destaque__moldura">
+                        <img src="images/logo.PNG">
+                    </div>
+                    <div class="exibicao-destaque__info">
+                        <h3 class="exibicao-destaque-info_titulo"></h3>
+                        <span class="vitrine-receita-exbicao-destaque__usuario"></span>
+                    </div>
+                </a>
+                <a class="vitrine-receita__exbicao-destaque">
+                    <div class="exbicao-destaque__moldura">
+                        <img src="images/logo.PNG">
+                    </div>
+                    <div class="exibicao-destaque__info">
+                        <h3 class="exibicao-destaque-info_titulo"></h3>
+                        <span class="vitrine-receita-exbicao-destaque__usuario"></span>
+                    </div>
+                </a>
+            </div>
+            <div id="vitrine-receita__mais-destaque">
+                <a class="vitrine-receita__exibicao-mais-destaque">
+                    <div class="exibicao-mais-destaque__moldura">
+                        <img src="images/logo.PNG">
+                    </div>
+                    <div class="exibicao-mais-destaque__info">
+                        <h3 class="exibicao-mais-destaque-info__titulo"></h3>
+                        <span class="vitrine-receita-exbicao-destaque__usuario"></span>
+                    </div>
+                </a>
+                <a class="vitrine-receita__exibicao-mais-destaque">
+                    <div class="exibicao-mais-destaque__moldura">
+                        <img src="images/logo.PNG">
+                    </div>
+                    <div class="exibicao-mais-destaque__info">
+                        <h3 class="exibicao-mais-destaque-info__titulo"></h3>
+                        <span class="vitrine-receita-exbicao-destaque__usuario"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="conteudo__divisor">
+            <h2>MAIS RECEITAS</h2>
+        </div>
+        <div id="vitrine-mais-receitas">
+
+        </div>
+        <div class="conteudo__divisor">
+            <h2>CULINARIA MUNDIAL</h2>
+        </div>
+        <div class="bandeiras">
+            <a class="bandeira" href="vitrine.html?tag=brasil">
+                <img src="images/bandeiras/brasil.png">
+            </a>
+            <a class="bandeira" href="vitrine.html?tag=espanha">
+                <img src="images/bandeiras/espanha.png">
+            </a>
+            <a class="bandeira" href="vitrine.html?tag=estados-unidos-da-america">
+                <img src="images/bandeiras/estados-unidos-da-america.png">
+            </a>
+            <a class="bandeira" href="vitrine.html?tag=franca">
+                <img src="images/bandeiras/franca.png">
+            </a>
+            <a class="bandeira" href="vitrine.html?tag=grecia">
+                <img src="images/bandeiras/grecia.png">
+            </a>
+            <a class="bandeira" href="vitrine.html?tag=india">
+                <img src="images/bandeiras/india.png">
+            </a>
+            <a class="bandeira" href="vitrine.html?tag=italia">
+                <img src="images/bandeiras/italia.png">
+            </a>
+            <a class="bandeira" href="vitrine.html?tag=japao">
+                <img src="images/bandeiras/japao.png">
+            </a>
+            <a class="bandeira" href="vitrine.html?tag=mexico">
+                <img src="images/bandeiras/mexico.png">
+            </a>
+            <a class="bandeira" href="vitrine.html?tag=peru">
+                <img src="images/bandeiras/peru.png">
+            </a>
+            <a class="bandeira" href="vitrine.html?tag=turquia">
+                <img src="images/bandeiras/turquia.png">
+            </a>
+        </div>
+        <div class="conteudo__divisor">
+            <h2>NOTICIAS</h2>
+        </div>
+        <div class="vitrine-noticia">
+            <div class="noticia">
+                <img src="images/logo.PNG">
+                <h3>Noticia</h3>
+                <p>Lorem ipsum dolor sit amet. Et quis iste a odit labore sed eligendi quaerat. Eum excepturi voluptas
+                    vel distinctio nesciunt aut sunt iste est natus rerum. Qui reprehenderit quibusdam aut atque
+                    necessitatibus et sequi incidunt eos mollitia labore vel nemo facere! Aut ullam rerum aut laboriosam
+                    consequatur et voluptas veritatis.</p>
+            </div>
+            <div class="noticia">
+                <img src="images/logo.PNG">
+                <h3>Noticia</h3>
+                <p>Lorem ipsum dolor sit amet. Et quis iste a odit labore sed eligendi quaerat. Eum excepturi voluptas
+                    vel distinctio nesciunt aut sunt iste est natus rerum. Qui reprehenderit quibusdam aut atque
+                    necessitatibus et sequi incidunt eos mollitia labore vel nemo facere! Aut ullam rerum aut laboriosam
+                    consequatur et voluptas veritatis.</p>
+            </div>
+            <div class="noticia">
+                <img src="images/logo.PNG">
+                <h3>Noticia</h3>
+                <p>Lorem ipsum dolor sit amet. Et quis iste a odit labore sed eligendi quaerat. Eum excepturi voluptas
+                    vel distinctio nesciunt aut sunt iste est natus rerum. Qui reprehenderit quibusdam aut atque
+                    necessitatibus et sequi incidunt eos mollitia labore vel nemo facere! Aut ullam rerum aut laboriosam
+                    consequatur et voluptas veritatis.</p>
+            </div>
+            <div class="noticia">
+                <img src="images/logo.PNG">
+                <h3>Noticia</h3>
+                <p>Lorem ipsum dolor sit amet. Et quis iste a odit labore sed eligendi quaerat. Eum excepturi voluptas
+                    vel distinctio nesciunt aut sunt iste est natus rerum. Qui reprehenderit quibusdam aut atque
+                    necessitatibus et sequi incidunt eos mollitia labore vel nemo facere! Aut ullam rerum aut laboriosam
+                    consequatur et voluptas veritatis.</p>
+            </div>
+            <div class="noticia">
+                <img src="images/logo.PNG">
+                <h3>Noticia</h3>
+                <p>Lorem ipsum dolor sit amet. Et quis iste a odit labore sed eligendi quaerat. Eum excepturi voluptas
+                    vel distinctio nesciunt aut sunt iste est natus rerum. Qui reprehenderit quibusdam aut atque
+                    necessitatibus et sequi incidunt eos mollitia labore vel nemo facere! Aut ullam rerum aut laboriosam
+                    consequatur et voluptas veritatis.</p>
+            </div>
+            <div class="noticia">
+                <img src="images/logo.PNG">
+                <h3>Noticia</h3>
+                <p>Lorem ipsum dolor sit amet. Et quis iste a odit labore sed eligendi quaerat. Eum excepturi voluptas
+                    vel distinctio nesciunt aut sunt iste est natus rerum. Qui reprehenderit quibusdam aut atque
+                    necessitatibus et sequi incidunt eos mollitia labore vel nemo facere! Aut ullam rerum aut laboriosam
+                    consequatur et voluptas veritatis.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+    </footer>
+    <script src="js/requsicao.js"></script>
+    <script src="js/autenticacao.js"></script>
+    <script src="js/slide.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/responsividade.js"></script>
+
+</body>
+
+</html>
