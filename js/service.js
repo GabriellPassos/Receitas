@@ -87,10 +87,13 @@ function AdiconarTags() {
     });
 }
 async function ConstruirElementoAutenticacao() {
+    let url = window.location.hostname
+    if(window.location.port){
+        url = `${window.location.hostname}:${window.location.port}`
+    }
     if (document.querySelector("#tela-autenticacao") == null) {
-        fetch("../autenticacao.html").then(response => {
-            console.log(response)
-            if (!response.ok) {
+        fetch(`http://${url}/autenticacao.html`).then(response => {
+            if (!response) {
                 switch (response.status) {
                     default:
                         throw new Error(`${response.status}: ${text}`);
