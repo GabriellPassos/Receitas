@@ -88,6 +88,7 @@ function AdiconarTags() {
 }
 async function ConstruirElementoAutenticacao() {
     let url = window.location.hostname
+    console.log(window.location.pathname)
     if(window.location.port){
         url = `${window.location.hostname}:${window.location.port}`
     }
