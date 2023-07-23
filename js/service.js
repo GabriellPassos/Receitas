@@ -89,7 +89,7 @@ function AdiconarTags() {
 async function ConstruirElementoAutenticacao() {
     let url;
     if (window.location.host.includes("github")) {
-        url = `https://${window.location.host}/Receitas`
+        url = `${window.location.host}/Receitas`
     } else {
         url = window.location.host
     }
