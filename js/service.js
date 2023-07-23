@@ -87,11 +87,7 @@ function AdiconarTags() {
     });
 }
 async function ConstruirElementoAutenticacao() {
-    let url = window.location.hostname
-    console.log(window.location.pathname)
-    if(window.location.port){
-        url = `${window.location.hostname}:${window.location.port}`
-    }
+    let url = window.location.host;
     if (document.querySelector("#tela-autenticacao") == null) {
         fetch(`http://${url}/autenticacao.html`).then(response => {
             if (!response) {
