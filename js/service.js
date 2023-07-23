@@ -87,7 +87,7 @@ function AdiconarTags() {
     });
 }
 async function ConstruirElementoAutenticacao() {
-    let url;
+    let url = '';
     if (window.location.host.includes("github")) {
         url = `${window.location.host}/Receitas`
     } else {
