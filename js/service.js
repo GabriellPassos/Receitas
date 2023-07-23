@@ -91,7 +91,7 @@ async function ConstruirElementoAutenticacao() {
     if (window.location.host.includes("github")) {
         url = `${window.location.protocol}//${window.location.host}/Receitas`
     } else {
-        url = `${window.location.protocol}//window.location.host`
+        url = `${window.location.protocol}//${window.location.host}`
     }
     if (document.querySelector("#tela-autenticacao") == null) {
         fetch(`${url}/autenticacao.html`).then(response => {
