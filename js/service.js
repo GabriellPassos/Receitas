@@ -88,21 +88,15 @@ function AdiconarTags() {
 }
 async function ConstruirElementoAutenticacao() {
     let url;
-    if(window.location.port){
-        url = window.location.host;
-    }
-    else{
-        url = `${window.location.host}/Receitas`;
-    }
+    url = window.location.host;
     if (document.querySelector("#tela-autenticacao") == null) {
-        fetch(`http://${url}/autenticacao.html`).then(response => {
+        fetch(`http://${url}/Receitas/autenticacao.html`).then(response => {
             if (!response) {
                 switch (response.status) {
                     default:
                         throw new Error(`${response.status}: ${text}`);
                 }
             }
-            console.log(response)
             return response.text();
         }).catch(err => console.log(err)).then(data => {
             document.querySelector("body").insertAdjacentHTML("afterEnd", data);
