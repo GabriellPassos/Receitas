@@ -1,4 +1,4 @@
-const HOST_URL = "http://localhost:8000"
+const HOST_URL = "https://localhost:8000"
 function EnviarFormulario() {
     //busca todos os filhos dentro do formulario, sendo esses as "linhas"
     //Após isso validamos os campos, retornando true se todos os campos foram preenchidos com sucesso
@@ -88,9 +88,14 @@ function AdiconarTags() {
 }
 async function ConstruirElementoAutenticacao() {
     let url;
-    url = window.location.host;
+
+    if (window.location.port) {
+        url = window.location.host;
+    } else {
+        url = `${window.location.host}/Receitas`
+    }
     if (document.querySelector("#tela-autenticacao") == null) {
-        fetch(`https://${url}/Receitas/autenticacao.html`).then(response => {
+        fetch(`https://${url}autenticacao.html`).then(response => {
             if (!response) {
                 switch (response.status) {
                     default:
