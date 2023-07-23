@@ -87,7 +87,13 @@ function AdiconarTags() {
     });
 }
 async function ConstruirElementoAutenticacao() {
-    let url = window.location.host;
+    let url;
+    if(window.location.port){
+        url = window.location.host;
+    }
+    else{
+        url = window.location.host + "/Receitas";
+    }
     if (document.querySelector("#tela-autenticacao") == null) {
         fetch(`http://${url}/autenticacao.html`).then(response => {
             if (!response) {
@@ -96,6 +102,7 @@ async function ConstruirElementoAutenticacao() {
                         throw new Error(`${response.status}: ${text}`);
                 }
             }
+            console.log(response)
             return response.text();
         }).catch(err => console.log(err)).then(data => {
             document.querySelector("body").insertAdjacentHTML("afterEnd", data);
