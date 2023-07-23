@@ -92,7 +92,7 @@ async function ConstruirElementoAutenticacao() {
         url = window.location.host;
     }
     else{
-        url = window.location.host + "/Receitas";
+        url = `${window.location.host}/Receitas`;
     }
     if (document.querySelector("#tela-autenticacao") == null) {
         fetch(`http://${url}/autenticacao.html`).then(response => {
