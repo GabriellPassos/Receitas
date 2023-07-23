@@ -89,12 +89,12 @@ function AdiconarTags() {
 async function ConstruirElementoAutenticacao() {
     let url = '';
     if (window.location.host.includes("github")) {
-        url = `${window.location.host}/Receitas`
+        url = `${window.location.protocol}//${window.location.host}/Receitas`
     } else {
-        url = window.location.host
+        url = `${window.location.protocol}//window.location.host`
     }
     if (document.querySelector("#tela-autenticacao") == null) {
-        fetch(`${window.location.protocol}//${url}/autenticacao.html`).then(response => {
+        fetch(`${url}/autenticacao.html`).then(response => {
             if (!response) {
                 switch (response.status) {
                     default:
