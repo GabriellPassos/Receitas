@@ -59,10 +59,11 @@ function ConstruirSlideImagem(imagens) {
         }
     }
     else{
+        let url = verificarUrlDominioGitHub();
         var elementoMoldura = document.createElement('div');
         elementoMoldura.classList.add('slide');
         var elementoImagem = document.createElement('img');
-        elementoImagem.src = '../images/logo2.PNG';
+        elementoImagem.src = `${url}/images/logo2.PNG`;
         campoSlide.appendChild(elementoMoldura);
         elementoMoldura.appendChild(elementoImagem);
     }

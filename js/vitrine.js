@@ -52,7 +52,8 @@ async function CarregarVitrine(receitas) {
                     elementoMoldura.querySelector("img").src = atob(receita["pictures"][0]);
                 }
                 else {
-                    elementoMoldura.querySelector("img").src = '../images/logo.PNG'
+                    let url = verificarUrlDominioGitHub();
+                    elementoMoldura.querySelector("img").src = `${url}/images/logo.PNG`
                 }
                 vitrine.appendChild(elementoMoldura);
             }
