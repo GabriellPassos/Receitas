@@ -1,4 +1,4 @@
-const HOST_URL = "http://localhost:8000"
+const HOST_URL = "http://localhost:5232"
 function EnviarFormulario() {
     //busca todos os filhos dentro do formulario, sendo esses as "linhas"
     //Após isso validamos os campos, retornando true se todos os campos foram preenchidos com sucesso
@@ -27,6 +27,7 @@ function EnviarFormulario() {
                         }
                     });
                 }
+                window.location.href = "../vitrine.html";
             }).catch(err => console.log(err));
     }
 }
@@ -52,10 +53,9 @@ async function BuscarReceitas() {
         mode: "cors",
         method: "GET",
         credentials: "include"
-    }).then(response => {
+    }).then(async(response) => {
         if (!response.ok) {
             return response.text().then(text => {
-
                 switch (response.status) {
                     case 401:
                         sessionStorage.removeItem("nomeusuario");
@@ -87,12 +87,7 @@ function AdiconarTags() {
     });
 }
 async function ConstruirElementoAutenticacao() {
-    let url = '';
-    if (window.location.host.includes("github")) {
-        url = `${window.location.protocol}//${window.location.host}/Receitas`
-    } else {
-        url = `${window.location.protocol}//${window.location.host}`
-    }
+    let url = verificarUrlDominioGitHub();
     if (document.querySelector("#tela-autenticacao") == null) {
         fetch(`${url}/autenticacao.html`).then(response => {
             if (!response) {
@@ -120,7 +115,7 @@ async function Registrar(chave) {
                 "Authorization": "Basic " + chave
             },
             credentials: "include"
-        }).then(response => {
+        }).then(async(resposta) => {
             if (!response.ok) {
                 return response.text().then(text => {
                     switch (response.status) {
@@ -141,7 +136,8 @@ async function Login(chave) {
                 "Authorization": "Basic " + chave,
             },
             credentials: "include"
-        }).then(response => {
+        }).then(async(response) => {
+
             if (!response.ok) {
                 return response.text().then(text => {
                     switch (response.status) {
@@ -149,10 +145,12 @@ async function Login(chave) {
                             throw new Error(`${response.status}: ${text}`);
                     }
                 });
+                console.log('teste')
             }
-
+            console.log(await response.text())
+            this.VerificacaoLogin();
         }).catch(err => console.log(err))
-        .then(VerificacaoLogin);
+       
 }
 async function Desconectar() {
     fetch(`${HOST_URL}/Authentication/Logout`,
@@ -181,9 +179,8 @@ async function VerificarLogin() {
             method: "GET",
             mode: "cors",
             credentials: "include"
-        }).then(response => {
+        }).then(async(response) => {
             if (!response.ok) {
-
                 return response.text().then(text => {
                     switch (response.status) {
                         case 401:
@@ -203,5 +200,14 @@ async function VerificarLogin() {
                 window.location.reload(false)
                 return userName;
             }
-        }).then().catch(err => console.log(err));
+        }).catch(err => console.log(err));
+}
+function verificarUrlDominioGitHub(){
+    let url = '';
+    if (window.location.host.includes("github")) {
+        url = `${window.location.protocol}//${window.location.host}/Receitas`
+    } else {
+        url = `${window.location.protocol}//${window.location.host}`
+    }
+    return url;
 }

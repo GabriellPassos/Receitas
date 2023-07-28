@@ -39,7 +39,7 @@ function ConstruirReceita() {
     var elementosImagem = formularioFoto.querySelectorAll(".formulario-foto__imagem");
     var campoIntrucoes = formularioReceita.querySelector(".formulario__info-instrucoes");
     var ImagensCarregadas = [];
-    tagsOk = TagsCheck();
+    var tagsOk = TagsCheck();
     ValidacaoDeCampos(campoNome);
     ValidacaoDeCampos(campoIntrucoes);
     for (let index = 0; index < linhas.length; index++) {
@@ -59,7 +59,7 @@ function ConstruirReceita() {
             ImagensCarregadas.push(btoa(elementoImagem.src));
         }
     }
-
+    tagsOk.push('destaqueslide', 'destaqueprincipal', 'maisdestaques', 'destaques', 'maisreceitas')
     var linhas = document.querySelectorAll(".formulario__info");
     var temporizador = document.querySelector(".linha__temporizador");
     var porcoes = document.querySelector(".linha__porcoes");

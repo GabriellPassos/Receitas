@@ -44,18 +44,29 @@ setInterval(function () {
 }, 6000);
 //Cria uma folha de slide para cada imagem dentro de 'imagens'
 function ConstruirSlideImagem(imagens) {
-    for (let index = 0; index < imagens.length; index++) {
+    if(imagens.length > 0){
+        for (let index = 0; index < imagens.length; index++) {
+            var elementoMoldura = document.createElement('div');
+            elementoMoldura.classList.add('slide');
+            var elementoImagem = document.createElement('img');
+            const imagemUrl = imagens[index];
+            if (index == 0) {
+                elementoMoldura.classList.add('s1');
+            }
+            elementoImagem.src = atob(imagemUrl);
+            campoSlide.appendChild(elementoMoldura);
+            elementoMoldura.appendChild(elementoImagem);
+        }
+    }
+    else{
         var elementoMoldura = document.createElement('div');
         elementoMoldura.classList.add('slide');
         var elementoImagem = document.createElement('img');
-        const imagemUrl = imagens[index];
-        if (index == 0) {
-            elementoMoldura.classList.add('s1');
-        }
-        elementoImagem.src = atob(imagemUrl);
+        elementoImagem.src = '../images/logo2.PNG';
         campoSlide.appendChild(elementoMoldura);
         elementoMoldura.appendChild(elementoImagem);
     }
+
 }
 //Cria uma folha de slide com uma caixa de titulo e texto para cada primeria imagem dentro da lista de receitas
 function ConstruirSlideHomeImagem(receitaDestaqueSlide) {

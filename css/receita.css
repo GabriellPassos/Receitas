@@ -5,7 +5,9 @@
     height: 100%;
     margin-top: 20px;
 }
-
+.slide{
+    height: 100%;
+}
 .receita-exibicao {
     position: relative;
     margin-bottom: auto;
@@ -42,6 +44,7 @@
 #receita-info__instrucoes {
     align-items: start;
     line-height: 1.8;
+    word-break: break-word;
 }
 
 #receita__barra-info {
@@ -86,13 +89,14 @@
     align-items: center;
     height: 100%;
     width: auto;
-
 }
 
 .barra-info__nome {
     font-size: 20px;
 }
-
+.slides > img{
+    width: 100%;
+}
 .slides {
     position: relative;
     width: 550px;
@@ -129,7 +133,6 @@
     }
     .receita__info {
         min-width: 80vw;
-        width: auto;
         margin-left: 0;
     }
 }

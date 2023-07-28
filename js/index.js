@@ -66,7 +66,7 @@ async function ConstruirElementoVitrine() {
             var titulo = document.createElement('h3');
             var texto = document.createElement('span');
             corpo.classList.add('vitrine-receita__exibicao-mais-destaque');
-            corpo.setAttribute('href', `/receita/receita.html?id=${receita["id"]}`);
+            corpo.setAttribute('href', `/receita.html?id=${receita["id"]}`);
             molduraImagem.classList.add('exibicao-mais-destaque__moldura');
             info.classList.add('exibicao-mais-destaque__info');
             titulo.classList.add('exibicao-mais-destaque-info__titulo');

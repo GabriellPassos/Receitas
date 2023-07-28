@@ -116,17 +116,21 @@ function ConstruirElementoTag(tagName) {
     return linha;
 }
 function ConstruirMoldura(receita) {
+    let url = verificarUrlDominioGitHub();
     var moldura = document.createElement("a");
     moldura.classList.add("receita-exibicao__moldura");
-    moldura.setAttribute("href", `../WebSiteReceitasAPI/receita.html?id=${receita["id"]}`);
+    moldura.setAttribute("href", `${url}/receita.html?id=${receita["id"]}`);
     var imagem = document.createElement("img");
     imagem.classList.add("receita-exibicao__imagem");
+    var molduraFoto = document.createElement("div");
+    molduraFoto.classList.add("receita-exibicao__moldura-foto");
     var barraNome = document.createElement("div");
     barraNome.classList.add("receita-exibicao__info");
     var nome = document.createElement("a");
 
     barraNome.appendChild(nome);
-    moldura.append(imagem, barraNome);
+    molduraFoto.appendChild(imagem);
+    moldura.append(molduraFoto, barraNome);
     for (let index = 0; index < receita["tags"].length; index++) {
         const tag = receita["tags"][index];
         moldura.classList.add(tag);
@@ -136,7 +140,8 @@ function ConstruirMoldura(receita) {
 function ConstrutorBotaoNovaReceita() {
     var botao = document.createElement('a');
     botao.setAttribute("id", "receita-exibicao-adicionar__moldura");
-    botao.href = "../WebSiteReceitasAPI/nova-receita.html";
+    let url = verificarUrlDominioGitHub();
+    botao.href = `${url}/nova-receita.html`;
     var texto = document.createElement('span');
     texto.innerText = "+";
     botao.appendChild(texto);
