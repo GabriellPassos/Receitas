@@ -170,7 +170,10 @@ async function Desconectar() {
                     }
                 });
             }
-        }).then(window.location.href = "../index.html")
+        }).then(()=>{
+            var url = verificarUrlDominioGitHub();
+            window.location.href = `${url}/index.html`
+        })
         .catch(err => console.log(err));
 }
 async function VerificarLogin() {
