@@ -27,7 +27,8 @@ function EnviarFormulario() {
                         }
                     });
                 }
-                window.location.href = "../vitrine.html";
+                let url = verificarUrlDominioGitHub();
+                window.location.href = `${url}/vitrine.html`;
             }).catch(err => console.log(err));
     }
 }
@@ -36,7 +37,7 @@ async function BuscarReceitasPorTag(tagName) {
         mode: "cors",
         method: "GET",
         credentials: "include"
-    }).then(response => {
+    }).then(async(response) => {
         if (!response.ok) {
             return response.text().then(text => {
                 switch (response.status) {
@@ -115,7 +116,7 @@ async function Registrar(chave) {
                 "Authorization": "Basic " + chave
             },
             credentials: "include"
-        }).then(async(resposta) => {
+        }).then(async(response) => {
             if (!response.ok) {
                 return response.text().then(text => {
                     switch (response.status) {
@@ -124,8 +125,8 @@ async function Registrar(chave) {
                     }
                 });
             }
-            window.location.reload(false);
-        }).catch(err => console.log(err));
+            window.location.reload(true);
+        }).catch();
 }
 async function Login(chave) {
     fetch(`${HOST_URL}/Authentication/Login`,
@@ -145,11 +146,9 @@ async function Login(chave) {
                             throw new Error(`${response.status}: ${text}`);
                     }
                 });
-                console.log('teste')
             }
-            console.log(await response.text())
             this.VerificacaoLogin();
-        }).catch(err => console.log(err))
+        }).catch()
        
 }
 async function Desconectar() {
@@ -174,7 +173,7 @@ async function Desconectar() {
             var url = verificarUrlDominioGitHub();
             window.location.href = `${url}/index.html`
         })
-        .catch(err => console.log(err));
+        .catch();
 }
 async function VerificarLogin() {
     fetch(`${HOST_URL}/Authentication/UserCheck`,
@@ -203,7 +202,7 @@ async function VerificarLogin() {
                 window.location.reload(false)
                 return userName;
             }
-        }).catch(err => console.log(err));
+        }).catch();
 }
 function verificarUrlDominioGitHub(){
     let url = '';
