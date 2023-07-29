@@ -4,6 +4,7 @@ function EnviarFormulario() {
     //Após isso validamos os campos, retornando true se todos os campos foram preenchidos com sucesso
     //liberando o envio dos dados para o lado do servidor
     receitaPronta = ConstruirReceita();
+    let url = verificarUrlDominioGitHub();
     if (receitaPronta != null) {
         fetch(`${HOST_URL}/Recipe/New`,
             {
@@ -27,7 +28,7 @@ function EnviarFormulario() {
                         }
                     });
                 }
-                window.location.href = "../vitrine.html";
+                window.location.href = `${url}/vitrine.html`;
             }).catch(err => console.log(err));
     }
 }

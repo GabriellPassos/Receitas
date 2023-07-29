@@ -145,10 +145,10 @@
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
+    justify-content: center;
 }
 .exbicao-principal__moldura > img{
     height: 100%;
-    width: 100%;
 }
 .exibicao__info{
     display: grid;

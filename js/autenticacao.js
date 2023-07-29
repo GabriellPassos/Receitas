@@ -81,7 +81,8 @@ async function EnviarFormularioLogin(elemento) {
 }
 
 async function BuscarCategoria(tagName) {
-    location.href = `../minhas-receitas.html?tag=${tagName}`
+    let url = verificarUrlDominioGitHub();
+    location.href = `${url}/minhas-receitas.html?tag=${tagName}`
 }
 function Entrar() {
     ConstruirElementoAutenticacao();

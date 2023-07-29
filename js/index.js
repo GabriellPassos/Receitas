@@ -13,8 +13,9 @@ async function ConstruirElementoSlide() {
 }
 async function ConstruirElementoVitrine() {
     var receitaDestaquePrincipal = await BuscarReceitasPorTag('destaqueprincipal');
+    let url = verificarUrlDominioGitHub();
     if (receitaDestaquePrincipal != null) {
-        destaqueVitrinePrincipal.querySelector('a').setAttribute('href', `../receita.html?id=${receitaDestaquePrincipal[0]["id"]}`);
+        destaqueVitrinePrincipal.querySelector('a').setAttribute('href', `${url}/receita.html?id=${receitaDestaquePrincipal[0]["id"]}`);
         destaqueVitrinePrincipal.querySelector(".exibicao-info_titulo").innerText = receitaDestaquePrincipal[0]["name"];
         destaqueVitrinePrincipal.querySelector(".porcoes").innerText = `${receitaDestaquePrincipal[0]["portions"]} porções`;
         destaqueVitrinePrincipal.querySelector(".tempo").innerText = receitaDestaquePrincipal[0]["time"];
@@ -29,7 +30,7 @@ async function ConstruirElementoVitrine() {
         for (let index = 1; index < destaqueVitrineDestaque.childElementCount; index++) {
             const element = destaqueVitrineDestaque.children[index];
             if (receitaDestaque[index] != null) {
-                element.setAttribute('href', `../receita.html?id=${receitaDestaque[index]["id"]}`);
+                element.setAttribute('href', `${url}/receita.html?id=${receitaDestaque[index]["id"]}`);
 
                 element.querySelector(".exibicao-destaque-info_titulo").innerText = receitaDestaque[index]["name"];
                 element.querySelector(".vitrine-receita-exbicao-destaque__usuario").innerText = `Chefe: ${receitaDestaque[index]["userName"]}`;
@@ -44,7 +45,7 @@ async function ConstruirElementoVitrine() {
         for (let index = 1; index < destaqueVitrineMaisDestaque.childElementCount; index++) {
             const element = destaqueVitrineMaisDestaque.children[index];
             if (receitaMaisDestaques[index] != null) {
-                element.setAttribute('href', `../receita.html?id=${receitaMaisDestaques[index]["id"]}`);
+                element.setAttribute('href', `${url}/receita.html?id=${receitaMaisDestaques[index]["id"]}`);
                 if (receitaMaisDestaques[index]["pictures"][0] != null) {
                     element.querySelector('img').src = atob(receitaMaisDestaques[index]["pictures"][0]);
                 }
@@ -66,7 +67,7 @@ async function ConstruirElementoVitrine() {
             var titulo = document.createElement('h3');
             var texto = document.createElement('span');
             corpo.classList.add('vitrine-receita__exibicao-mais-destaque');
-            corpo.setAttribute('href', `/receita.html?id=${receita["id"]}`);
+            corpo.setAttribute('href', `${url}/receita.html?id=${receita["id"]}`);
             molduraImagem.classList.add('exibicao-mais-destaque__moldura');
             info.classList.add('exibicao-mais-destaque__info');
             titulo.classList.add('exibicao-mais-destaque-info__titulo');
