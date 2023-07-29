@@ -74,6 +74,7 @@ function ConstruirSlideHomeImagem(receitaDestaqueSlide) {
     for (let index = 0; index < receitaDestaqueSlide.length; index++) {
         const receita = receitaDestaqueSlide[index];
         if (receita['pictures'].length > 0) {
+            let url = verificarUrlDominioGitHub();
             const imagemUrl = receita['pictures'][0];
             var elementoMoldura = document.createElement('a');
             var elementoInfo = document.createElement('div');
@@ -85,7 +86,7 @@ function ConstruirSlideHomeImagem(receitaDestaqueSlide) {
             elementoImagem.src = atob(imagemUrl);
             titulo.innerText = `${receita['name']}`;
             texto.innerText = `${receita['stepByStep']}`;
-            elementoMoldura.setAttribute('href', `../receita.html?id=${receita["id"]}`)
+            elementoMoldura.setAttribute('href', `${url}/receita.html?id=${receita["id"]}`)
             elementoInfo.append(titulo, texto);
             elementoMoldura.append(elementoImagem, elementoInfo);
             if (index == 0) {
