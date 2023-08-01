@@ -1,25 +1,60 @@
-# [WebSiteReceitasAPI](https://gabriellpassos.github.io/WebSiteReceitasAPI/)
-WebSite ReceitasAPI necessita para ser visualizado em sua totalidade seu ambiente backend. Para isso disponibilizo este aquivo docker-compose.yml 
-para a montagem do container composto pela API Receitas e o banco de dados MYSQL. Ele receberá as requisições feitas pelo WebSiteReceitasAPI para a exibição e cadastro de receitas, resgisto e login de usuarios.
+#  Receitas
+## Sobre o projeto
+  Site de compartilhamento de receitas. Montado utilizando JavaScript Vanilla. Esta aplicação esta dividida em front e back-end. 
+<br>
+ - [Site Receitas](https://gabriellpassos.github.io/OrkutAngular/)
+ - [Respositório back-end](https://github.com/GabriellPassos/APIREST-Receitas)
 
-Siga os passos para execução deste ambiente.
-1. Faça o download deste repositório.
-2. Certifique-se de possuir em sua máquina o programa "Docker Desktop"
-3. Com seu interpretador de comandos vá até a pasta "docker compose" localizada dentro deste repositório baixado.
-4. Execute em ordem os seguintes comandos em seu interpretador:
+## :mag_right: Visão geral
+### Página inicial
+![pagina de autenticacao](https://github.com/GabriellPassos/assets/blob/main/receitas/1.png)
+![pagina perfil](https://github.com/GabriellPassos/assets/blob/main/receitas/3.png) 
 
-- docker-compose build --no-cache
-- docker-compose up
+### Página de categoria
+  Utilizando as tags é possível filtrar as receitas disponíveis, buscando exatamente o prato desejado.
+  
+![pagina perfil](https://github.com/GabriellPassos/assets/blob/main/receitas/4.png) 
+### Página da receita
+![pagina perfil](https://github.com/GabriellPassos/assets/blob/main/receitas/5.png) 
 
-O container irá aparecer na lista no programa Docker Desktop e estará pronto para uso.
+### :iphone: Mobile
+![pagina perfil](https://github.com/GabriellPassos/assets/blob/main/receitas/9.png) 
+![pagina perfil](https://github.com/GabriellPassos/assets/blob/main/receitas/10.png) 
+## :hammer_and_wrench: Tecnologias utilizadas
+### Back end
+- ASP.NET Core
+- .NET Framework
+- Pomelo
+- JWT Bearer
+### Banco de dados
+- MySQL
+### Front end
+- HTML / CSS / JS Vanilla
 
-Com o container em ação é necessário alimenta-lo com dados iniciais.
-1. Certifique-se de possuir o programa "MYSQL MANAGER" em sua máquina.
-2. Abra-o e conecte-se ao servidor usando os seguintes dados:
-- server: localhost,1433
-- login: sa
-- senha: S#arada123
-3. Dentro da pasta docker compose esta localizado o script "scriptReceitasDB", Abra-o no MYSQL MANAGER e execute.
-Isso criará um volume contendo algumas receitas pré-cadastradas e outras informações para o funcionamento do site.
+## :rocket: Executando o projeto
 
-É possível a criação de novos usuarios porém se preferir aqui está uma conta para testes: email: email@gmail.com senha: 123
+### Back-End
+```bash
+# clone o repositório da APIREST
+gh repo clone GabriellPassos/APIREST-Receitas
+
+# Na raiz do projeto abra o terminal e acesse seu usuario mysql
+mysql -u [seu-usuario] -p
+# Em seguida digite sua senha
+
+# Para importar o banco de dados
+source [caminho-raiz-do-projeto]/BKPReceitasdb.sql;
+
+# Importação completa, retorne a raiz do projeto
+exit;
+
+# Execute o projeto com o seguinte comando
+dotnet run --url="http://http://localhost:5232/"
+```
+### Front-End
+ - [Site Receitas](https://gabriellpassos.github.io/OrkutAngular/)
+
+# Autor
+
+
+[Gabriel Silva Passos](https://www.linkedin.com/in/gabrielsilvapassos/)
