@@ -59,7 +59,7 @@ function ConstruirReceita() {
             ImagensCarregadas.push(btoa(elementoImagem.src));
         }
     }
-    tagsOk.push('destaqueslide', 'destaqueprincipal', 'maisdestaques', 'destaques', 'maisreceitas')
+    //tagsOk.push('destaqueslide', 'destaqueprincipal', 'maisdestaques', 'destaques', 'maisreceitas')
     var linhas = document.querySelectorAll(".formulario__info");
     var temporizador = document.querySelector(".linha__temporizador");
     var porcoes = document.querySelector(".linha__porcoes");

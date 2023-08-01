@@ -29,7 +29,7 @@ function EnviarFormulario() {
                     });
                 }
                 window.location.href = `${url}/vitrine.html`;
-            }).catch(err => console.log(err));
+            }).catch();
     }
 }
 async function BuscarReceitasPorTag(tagName) {
@@ -47,7 +47,7 @@ async function BuscarReceitasPorTag(tagName) {
             });
         }
         return response.json();
-    }).catch(err => console.log(err));
+    }).catch();
 }
 async function BuscarReceitas() {
     return fetch(`${HOST_URL}/Recipe/SearchUserRecipe`, {
@@ -116,7 +116,7 @@ async function Registrar(chave) {
                 "Authorization": "Basic " + chave
             },
             credentials: "include"
-        }).then(async(resposta) => {
+        }).then(async(response) => {
             if (!response.ok) {
                 return response.text().then(text => {
                     switch (response.status) {
@@ -146,11 +146,9 @@ async function Login(chave) {
                             throw new Error(`${response.status}: ${text}`);
                     }
                 });
-                console.log('teste')
             }
-            console.log(await response.text())
             this.VerificacaoLogin();
-        }).catch(err => console.log(err))
+        }).catch()
        
 }
 async function Desconectar() {
@@ -175,7 +173,7 @@ async function Desconectar() {
             var url = verificarUrlDominioGitHub();
             window.location.href = `${url}/index.html`
         })
-        .catch(err => console.log(err));
+        .catch();
 }
 async function VerificarLogin() {
     fetch(`${HOST_URL}/Authentication/UserCheck`,
@@ -204,7 +202,7 @@ async function VerificarLogin() {
                 window.location.reload(false)
                 return userName;
             }
-        }).catch(err => console.log(err));
+        }).catch();
 }
 function verificarUrlDominioGitHub(){
     let url = '';

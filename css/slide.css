@@ -21,6 +21,8 @@
     width: 25%;
     margin-left: 0px;
     transition: .5s;
+    height: 100%;
+    justify-content: center;
     
 }
 .slide > img{

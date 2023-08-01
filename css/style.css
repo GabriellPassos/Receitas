@@ -337,7 +337,7 @@ footer {
         height: 100%;
         padding-bottom: auto;
         line-height: 4rem;
-        overflow:scroll;
+        overflow-y:scroll;
     }
     header.on {
         height: 100vh;

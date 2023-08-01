@@ -27,7 +27,7 @@ async function ConstruirElementoVitrine() {
     }
     var receitaDestaque = await BuscarReceitasPorTag("destaques");
     if (receitaDestaque != null) {
-        for (let index = 1; index < destaqueVitrineDestaque.childElementCount; index++) {
+        for (let index = 0; index < destaqueVitrineDestaque.childElementCount; index++) {
             const element = destaqueVitrineDestaque.children[index];
             if (receitaDestaque[index] != null) {
                 element.setAttribute('href', `${url}/receita.html?id=${receitaDestaque[index]["id"]}`);
@@ -42,7 +42,7 @@ async function ConstruirElementoVitrine() {
     }
     var receitaMaisDestaques = await BuscarReceitasPorTag("maisdestaques");
     if (receitaMaisDestaques != null) {
-        for (let index = 1; index < destaqueVitrineMaisDestaque.childElementCount; index++) {
+        for (let index = 0; index < destaqueVitrineMaisDestaque.childElementCount; index++) {
             const element = destaqueVitrineMaisDestaque.children[index];
             if (receitaMaisDestaques[index] != null) {
                 element.setAttribute('href', `${url}/receita.html?id=${receitaMaisDestaques[index]["id"]}`);
