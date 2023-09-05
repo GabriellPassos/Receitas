@@ -2,7 +2,7 @@
 ## Sobre o projeto
   Site de compartilhamento de receitas. Montado utilizando JavaScript Vanilla. Esta aplicação esta dividida em front e back-end. 
 <br>
- - [Site Receitas](https://gabriellpassos.github.io/OrkutAngular/)
+ - [Site Receitas](https://gabriellpassos.github.io/Receitas/)
  - [Respositório back-end](https://github.com/GabriellPassos/APIREST-Receitas)
 
 ## :mag_right: Visão geral
